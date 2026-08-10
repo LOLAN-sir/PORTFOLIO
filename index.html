@@ -7,7 +7,6 @@
 <title>LOLAN | PC Builder</title>
 
 <style>
-
 *{
     margin:0;
     padding:0;
@@ -31,9 +30,9 @@ nav{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background:rgba(7,9,13,.88);
-    backdrop-filter:blur(12px);
+    background:rgba(7,9,13,.92);
     border-bottom:1px solid #202631;
+    backdrop-filter:blur(12px);
 }
 
 .logo{
@@ -49,8 +48,7 @@ nav{
 nav a{
     color:#aaa;
     text-decoration:none;
-    margin-left:20px;
-    transition:.3s;
+    margin-left:18px;
 }
 
 nav a:hover{
@@ -66,6 +64,7 @@ section{
     display:flex;
     align-items:center;
     justify-content:center;
+    text-align:center;
     background:
     radial-gradient(circle at 80% 20%,#12324755,transparent 35%),
     radial-gradient(circle at 20% 80%,#24205a44,transparent 35%);
@@ -73,7 +72,6 @@ section{
 
 .hero-content{
     max-width:850px;
-    text-align:center;
 }
 
 .tag{
@@ -167,7 +165,7 @@ h1{
 
 .card:hover{
     transform:translateY(-5px);
-    border-color:#55d9ff66;
+    border-color:#55d9ff;
 }
 
 .card h3{
@@ -250,10 +248,6 @@ h1{
     font-weight:bold;
 }
 
-.project h3{
-    margin:8px 0;
-}
-
 .timeline{
     border-left:2px solid #26303c;
     padding-left:30px;
@@ -280,9 +274,96 @@ h1{
     letter-spacing:2px;
 }
 
-.timeline-item h3{
-    margin:5px 0;
+
+/* GAMING */
+
+.game-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
 }
+
+.game-card{
+    min-height:230px;
+    padding:25px;
+    border-radius:20px;
+    border:1px solid #29313d;
+    background:linear-gradient(145deg,#141922,#090c11);
+    color:white;
+    text-decoration:none;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    position:relative;
+    overflow:hidden;
+    transition:.35s;
+}
+
+.game-card:hover{
+    transform:translateY(-8px);
+    border-color:#55d9ff;
+    box-shadow:0 15px 40px rgba(0,0,0,.5);
+}
+
+.game-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:radial-gradient(
+        circle at 80% 20%,
+        rgba(85,217,255,.20),
+        transparent 45%
+    );
+}
+
+.game-content{
+    position:relative;
+    z-index:2;
+}
+
+.game-icon{
+    width:58px;
+    height:58px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:15px;
+    background:#090c11;
+    border:1px solid #303b49;
+    font-size:30px;
+    margin-bottom:20px;
+}
+
+.game-label{
+    color:#55d9ff;
+    font-size:11px;
+    letter-spacing:2px;
+    font-weight:bold;
+}
+
+.game-card h3{
+    font-size:22px;
+    margin:6px 0;
+}
+
+.game-card p{
+    color:#8993a2;
+    font-size:14px;
+}
+
+.steam-button{
+    display:inline-block;
+    margin-top:15px;
+    padding:9px 14px;
+    border-radius:9px;
+    background:white;
+    color:#07090d;
+    font-size:12px;
+    font-weight:bold;
+}
+
+
+/* CONTACT */
 
 .contact{
     text-align:center;
@@ -296,156 +377,17 @@ footer{
 }
 
 
-/* =========================
-   GAMING CARDS
-========================= */
-
-.game-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:22px;
-}
-
-.game-card{
-    min-height:280px;
-    border:1px solid #29313d;
-    border-radius:20px;
-    padding:28px;
-    text-decoration:none;
-    color:white;
-    display:flex;
-    align-items:flex-end;
-    position:relative;
-    overflow:hidden;
-    background:
-    linear-gradient(145deg,#141922,#090c11);
-    transition:.35s;
-}
-
-.game-card:hover{
-    transform:translateY(-8px);
-    border-color:#55d9ff;
-    box-shadow:0 18px 45px rgba(0,0,0,.45);
-}
-
-.game-card:before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(
-        180deg,
-        rgba(0,0,0,.05),
-        rgba(0,0,0,.92)
-    );
-}
-
-.game-content{
-    position:relative;
-    z-index:2;
-}
-
-.game-label{
-    color:#55d9ff;
-    font-size:11px;
-    letter-spacing:2px;
-    font-weight:bold;
-}
-
-.game-card h3{
-    font-size:27px;
-    margin:7px 0;
-}
-
-.game-card p{
-    color:#c2c8d1;
-    font-size:14px;
-}
-
-.game-button{
-    display:inline-block;
-    margin-top:15px;
-    padding:9px 15px;
-    border-radius:9px;
-    background:white;
-    color:#07090d;
-    font-size:13px;
-    font-weight:bold;
-}
-
-
-/* Game backgrounds */
-
-.game-spiderman{
-    background:
-    linear-gradient(180deg,transparent,rgba(0,0,0,.95)),
-    url("https://cdn.akamai.steamstatic.com/steam/apps/1817070/header.jpg")
-    center/cover;
-}
-
-.game-rdr2{
-    background:
-    linear-gradient(180deg,transparent,rgba(0,0,0,.95)),
-    url("https://cdn.akamai.steamstatic.com/steam/apps/1174180/header.jpg")
-    center/cover;
-}
-
-.game-gta{
-    background:
-    linear-gradient(180deg,transparent,rgba(0,0,0,.95)),
-    url("https://cdn.akamai.steamstatic.com/steam/apps/3240220/header.jpg")
-    center/cover;
-}
-
-.game-gow{
-    background:
-    linear-gradient(180deg,transparent,rgba(0,0,0,.95)),
-    url("https://cdn.akamai.steamstatic.com/steam/apps/1593500/header.jpg")
-    center/cover;
-}
-
-.game-ghost{
-    background:
-    linear-gradient(180deg,transparent,rgba(0,0,0,.95)),
-    url("https://cdn.akamai.steamstatic.com/steam/apps/2215430/header.jpg")
-    center/cover;
-}
-
-.game-forza{
-    background:
-    linear-gradient(180deg,transparent,rgba(0,0,0,.95)),
-    url("https://cdn.akamai.steamstatic.com/steam/apps/1551360/header.jpg")
-    center/cover;
-}
-
-.game-fc3{
-    background:
-    linear-gradient(180deg,transparent,rgba(0,0,0,.95)),
-    url("https://cdn.akamai.steamstatic.com/steam/apps/220240/header.jpg")
-    center/cover;
-}
-
-.game-fc4{
-    background:
-    linear-gradient(180deg,transparent,rgba(0,0,0,.95)),
-    url("https://cdn.akamai.steamstatic.com/steam/apps/298110/header.jpg")
-    center/cover;
-}
-
-.game-primal{
-    background:
-    linear-gradient(180deg,transparent,rgba(0,0,0,.95)),
-    url("https://cdn.akamai.steamstatic.com/steam/apps/371660/header.jpg")
-    center/cover;
-}
-
-
 /* MOBILE */
 
-@media(max-width:750px){
+@media(max-width:850px){
 
-    nav{
-        padding:16px 5%;
+    .game-grid{
+        grid-template-columns:repeat(2,1fr);
     }
+
+}
+
+@media(max-width:650px){
 
     nav .links{
         display:none;
@@ -467,28 +409,15 @@ footer{
         grid-template-columns:1fr;
     }
 
-    .game-card{
-        min-height:250px;
-    }
-
-    .game-card h3{
-        font-size:22px;
-    }
-
     h1{
         letter-spacing:-4px;
     }
 
 }
-
 </style>
 </head>
 
-
 <body>
-
-
-<!-- NAVIGATION -->
 
 <nav>
 
@@ -497,14 +426,12 @@ footer{
     </div>
 
     <div class="links">
-
         <a href="#about">About</a>
         <a href="#build">Build</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#gaming">Gaming</a>
         <a href="#contact">Contact</a>
-
     </div>
 
 </nav>
@@ -522,9 +449,7 @@ footer{
 
         <h1>LOLAN</h1>
 
-        <h2>
-            Building. Repairing. Experimenting.
-        </h2>
+        <h2>Building. Repairing. Experimenting.</h2>
 
         <p>
             I'm Abhinand, known as LOLAN — a tech enthusiast and
@@ -570,7 +495,6 @@ footer{
 
     <div class="grid">
 
-
         <div class="card">
 
             <p class="quote">
@@ -587,9 +511,8 @@ footer{
             <h3>Who I Am</h3>
 
             <p>
-                I'm a Plus Two Electronics student at
-                St. Aloysius School, Thrissur.
-                I'm interested in PC hardware,
+                I'm a Plus Two Electronics student at St. Aloysius
+                School, Thrissur. I'm interested in PC hardware,
                 troubleshooting, gaming and electronics.
             </p>
 
@@ -601,39 +524,21 @@ footer{
                 technology.
             </p>
 
-
             <div class="stats">
 
                 <div class="stat">
-
                     <strong>PC</strong>
-
-                    <span>
-                        Building & Repair
-                    </span>
-
+                    <span>Building & Repair</span>
                 </div>
 
-
                 <div class="stat">
-
                     <strong>IoT</strong>
-
-                    <span>
-                        Learning
-                    </span>
-
+                    <span>Learning</span>
                 </div>
 
-
                 <div class="stat">
-
                     <strong>Python</strong>
-
-                    <span>
-                        Beginner
-                    </span>
-
+                    <span>Beginner</span>
                 </div>
 
             </div>
@@ -653,9 +558,7 @@ footer{
 
         <small>02 / FEATURED BUILD</small>
 
-        <h2>
-            The PC that changed everything.
-        </h2>
+        <h2>The PC that changed everything.</h2>
 
         <p>
             My primary gaming and editing PC — built through
@@ -668,21 +571,15 @@ footer{
     <div class="card">
 
         <div class="photo">
-
             📸<br>
-
             YOUR PC PHOTO WILL GO HERE
-
         </div>
-
 
         <div class="grid">
 
             <div>
 
-                <h3>
-                    From scraps to a gaming machine
-                </h3>
+                <h3>From scraps to a gaming machine</h3>
 
                 <p>
                     I started with parts I could get instead of
@@ -696,9 +593,7 @@ footer{
 
             <div>
 
-                <h3>
-                    What it taught me
-                </h3>
+                <h3>What it taught me</h3>
 
                 <p>
                     Hardware compatibility, troubleshooting,
@@ -724,9 +619,7 @@ footer{
 
         <small>03 / SKILLS</small>
 
-        <h2>
-            What I work with.
-        </h2>
+        <h2>What I work with.</h2>
 
     </div>
 
@@ -735,53 +628,18 @@ footer{
 
         <div class="skills">
 
-            <span class="skill">
-                PC Building
-            </span>
-
-            <span class="skill">
-                Hardware Troubleshooting
-            </span>
-
-            <span class="skill">
-                Windows Troubleshooting
-            </span>
-
-            <span class="skill">
-                BIOS / Boot Troubleshooting
-            </span>
-
-            <span class="skill">
-                Game File Troubleshooting
-            </span>
-
-            <span class="skill">
-                DLL Error Troubleshooting
-            </span>
-
-            <span class="skill">
-                Gaming Performance
-            </span>
-
-            <span class="skill">
-                Arduino
-            </span>
-
-            <span class="skill">
-                Raspberry Pi
-            </span>
-
-            <span class="skill">
-                Sensors
-            </span>
-
-            <span class="skill">
-                Electronics
-            </span>
-
-            <span class="skill">
-                Python — Beginner
-            </span>
+            <span class="skill">PC Building</span>
+            <span class="skill">Hardware Troubleshooting</span>
+            <span class="skill">Windows Troubleshooting</span>
+            <span class="skill">BIOS / Boot Troubleshooting</span>
+            <span class="skill">Game File Troubleshooting</span>
+            <span class="skill">DLL Error Troubleshooting</span>
+            <span class="skill">Gaming Performance</span>
+            <span class="skill">Arduino</span>
+            <span class="skill">Raspberry Pi</span>
+            <span class="skill">Sensors</span>
+            <span class="skill">Electronics</span>
+            <span class="skill">Python — Beginner</span>
 
         </div>
 
@@ -798,9 +656,7 @@ footer{
 
         <small>04 / PROJECTS</small>
 
-        <h2>
-            Things I build & explore.
-        </h2>
+        <h2>Things I build & explore.</h2>
 
         <p>
             Real experience stays real. Future ideas are clearly
@@ -812,16 +668,13 @@ footer{
 
     <div class="grid">
 
-
         <div class="card project">
 
             <div class="project-label">
                 COMPLETED / ONGOING
             </div>
 
-            <h3>
-                Primary PC Build
-            </h3>
+            <h3>Primary PC Build</h3>
 
             <p>
                 A gaming and editing PC assembled and upgraded
@@ -838,9 +691,7 @@ footer{
                 ELECTRONICS
             </div>
 
-            <h3>
-                School Electronics Project
-            </h3>
+            <h3>School Electronics Project</h3>
 
             <p>
                 A school-level electronics project that gave me
@@ -857,9 +708,7 @@ footer{
                 EXPERIENCE
             </div>
 
-            <h3>
-                PC Troubleshooting
-            </h3>
+            <h3>PC Troubleshooting</h3>
 
             <p>
                 Windows crashes, loading problems, BIOS-related
@@ -875,9 +724,7 @@ footer{
                 FUTURE PROJECT
             </div>
 
-            <h3>
-                Smart Pest Detection Concept
-            </h3>
+            <h3>Smart Pest Detection Concept</h3>
 
             <p>
                 A future IoT concept exploring automated pest
@@ -899,25 +746,18 @@ footer{
 
         <small>05 / MY JOURNEY</small>
 
-        <h2>
-            Still learning. Still building.
-        </h2>
+        <h2>Still learning. Still building.</h2>
 
     </div>
 
 
     <div class="card timeline">
 
-
         <div class="timeline-item">
 
-            <small>
-                START
-            </small>
+            <small>START</small>
 
-            <h3>
-                Discovered PC Building
-            </h3>
+            <h3>Discovered PC Building</h3>
 
             <p>
                 I found myself drawn into computers and started
@@ -930,13 +770,9 @@ footer{
 
         <div class="timeline-item">
 
-            <small>
-                BUILD
-            </small>
+            <small>BUILD</small>
 
-            <h3>
-                Built My Primary PC
-            </h3>
+            <h3>Built My Primary PC</h3>
 
             <p>
                 A project that turned scraps and persistence into
@@ -948,13 +784,9 @@ footer{
 
         <div class="timeline-item">
 
-            <small>
-                NOW
-            </small>
+            <small>NOW</small>
 
-            <h3>
-                Plus Two Electronics
-            </h3>
+            <h3>Plus Two Electronics</h3>
 
             <p>
                 Learning electronics while developing practical
@@ -966,13 +798,9 @@ footer{
 
         <div class="timeline-item">
 
-            <small>
-                NEXT
-            </small>
+            <small>NEXT</small>
 
-            <h3>
-                Computer Engineering
-            </h3>
+            <h3>Computer Engineering</h3>
 
             <p>
                 Deepening my knowledge of computers, programming,
@@ -980,7 +808,6 @@ footer{
             </p>
 
         </div>
-
 
     </div>
 
@@ -993,16 +820,12 @@ footer{
 
     <div class="title">
 
-        <small>
-            06 / GAMING
-        </small>
+        <small>06 / GAMING</small>
 
-        <h2>
-            Games I Play.
-        </h2>
+        <h2>Games I Play.</h2>
 
         <p>
-            Click any game card to explore it on Steam.
+            Click any game to open its Steam page.
         </p>
 
     </div>
@@ -1014,13 +837,15 @@ footer{
         <!-- SPIDER-MAN -->
 
         <a
-            class="game-card game-spiderman"
-            href="https://store.steampowered.com/search/?term=Marvel%27s%20Spider-Man%20Miles%20Morales"
+            class="game-card"
+            href="https://store.steampowered.com/search/?term=Spider-Man%20Miles%20Morales"
             target="_blank"
             rel="noopener noreferrer"
         >
 
             <div class="game-content">
+
+                <div class="game-icon">🕷️</div>
 
                 <div class="game-label">
                     MARVEL
@@ -1031,11 +856,11 @@ footer{
                 </h3>
 
                 <p>
-                    Explore the game on Steam.
+                    Click to explore on Steam.
                 </p>
 
-                <span class="game-button">
-                    VIEW ON STEAM →
+                <span class="steam-button">
+                    STEAM →
                 </span>
 
             </div>
@@ -1046,13 +871,15 @@ footer{
         <!-- RDR2 -->
 
         <a
-            class="game-card game-rdr2"
+            class="game-card"
             href="https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/"
             target="_blank"
             rel="noopener noreferrer"
         >
 
             <div class="game-content">
+
+                <div class="game-icon">🤠</div>
 
                 <div class="game-label">
                     ROCKSTAR GAMES
@@ -1063,11 +890,11 @@ footer{
                 </h3>
 
                 <p>
-                    Explore the game on Steam.
+                    Click to explore on Steam.
                 </p>
 
-                <span class="game-button">
-                    VIEW ON STEAM →
+                <span class="steam-button">
+                    STEAM →
                 </span>
 
             </div>
@@ -1078,13 +905,15 @@ footer{
         <!-- GTA V -->
 
         <a
-            class="game-card game-gta"
+            class="game-card"
             href="https://store.steampowered.com/search/?term=Grand%20Theft%20Auto%20V"
             target="_blank"
             rel="noopener noreferrer"
         >
 
             <div class="game-content">
+
+                <div class="game-icon">🚗</div>
 
                 <div class="game-label">
                     ROCKSTAR GAMES
@@ -1095,11 +924,11 @@ footer{
                 </h3>
 
                 <p>
-                    Explore the game on Steam.
+                    Click to explore on Steam.
                 </p>
 
-                <span class="game-button">
-                    VIEW ON STEAM →
+                <span class="steam-button">
+                    STEAM →
                 </span>
 
             </div>
@@ -1110,13 +939,15 @@ footer{
         <!-- GOD OF WAR -->
 
         <a
-            class="game-card game-gow"
+            class="game-card"
             href="https://store.steampowered.com/search/?term=God%20of%20War"
             target="_blank"
             rel="noopener noreferrer"
         >
 
             <div class="game-content">
+
+                <div class="game-icon">⚔️</div>
 
                 <div class="game-label">
                     SONY
@@ -1127,11 +958,11 @@ footer{
                 </h3>
 
                 <p>
-                    Explore the game on Steam.
+                    Click to explore on Steam.
                 </p>
 
-                <span class="game-button">
-                    VIEW ON STEAM →
+                <span class="steam-button">
+                    STEAM →
                 </span>
 
             </div>
@@ -1142,13 +973,15 @@ footer{
         <!-- GHOST OF TSUSHIMA -->
 
         <a
-            class="game-card game-ghost"
+            class="game-card"
             href="https://store.steampowered.com/app/2215430/Ghost_of_Tsushima_DIRECTORS_CUT/"
             target="_blank"
             rel="noopener noreferrer"
         >
 
             <div class="game-content">
+
+                <div class="game-icon">🗡️</div>
 
                 <div class="game-label">
                     SONY
@@ -1159,11 +992,11 @@ footer{
                 </h3>
 
                 <p>
-                    Explore the game on Steam.
+                    Click to explore on Steam.
                 </p>
 
-                <span class="game-button">
-                    VIEW ON STEAM →
+                <span class="steam-button">
+                    STEAM →
                 </span>
 
             </div>
@@ -1174,13 +1007,15 @@ footer{
         <!-- FORZA HORIZON 5 -->
 
         <a
-            class="game-card game-forza"
+            class="game-card"
             href="https://store.steampowered.com/app/1551360/Forza_Horizon_5/"
             target="_blank"
             rel="noopener noreferrer"
         >
 
             <div class="game-content">
+
+                <div class="game-icon">🏎️</div>
 
                 <div class="game-label">
                     XBOX GAME STUDIOS
@@ -1191,11 +1026,11 @@ footer{
                 </h3>
 
                 <p>
-                    Explore the game on Steam.
+                    Click to explore on Steam.
                 </p>
 
-                <span class="game-button">
-                    VIEW ON STEAM →
+                <span class="steam-button">
+                    STEAM →
                 </span>
 
             </div>
@@ -1206,13 +1041,15 @@ footer{
         <!-- FAR CRY 3 -->
 
         <a
-            class="game-card game-fc3"
+            class="game-card"
             href="https://store.steampowered.com/app/220240/Far_Cry_3/"
             target="_blank"
             rel="noopener noreferrer"
         >
 
             <div class="game-content">
+
+                <div class="game-icon">🎯</div>
 
                 <div class="game-label">
                     UBISOFT
@@ -1223,11 +1060,11 @@ footer{
                 </h3>
 
                 <p>
-                    Explore the game on Steam.
+                    Click to explore on Steam.
                 </p>
 
-                <span class="game-button">
-                    VIEW ON STEAM →
+                <span class="steam-button">
+                    STEAM →
                 </span>
 
             </div>
@@ -1238,13 +1075,15 @@ footer{
         <!-- FAR CRY 4 -->
 
         <a
-            class="game-card game-fc4"
+            class="game-card"
             href="https://store.steampowered.com/app/298110/Far_Cry_4/"
             target="_blank"
             rel="noopener noreferrer"
         >
 
             <div class="game-content">
+
+                <div class="game-icon">🎯</div>
 
                 <div class="game-label">
                     UBISOFT
@@ -1255,11 +1094,11 @@ footer{
                 </h3>
 
                 <p>
-                    Explore the game on Steam.
+                    Click to explore on Steam.
                 </p>
 
-                <span class="game-button">
-                    VIEW ON STEAM →
+                <span class="steam-button">
+                    STEAM →
                 </span>
 
             </div>
@@ -1270,13 +1109,15 @@ footer{
         <!-- FAR CRY PRIMAL -->
 
         <a
-            class="game-card game-primal"
+            class="game-card"
             href="https://store.steampowered.com/app/371660/Far_Cry_Primal/"
             target="_blank"
             rel="noopener noreferrer"
         >
 
             <div class="game-content">
+
+                <div class="game-icon">🦴</div>
 
                 <div class="game-label">
                     UBISOFT
@@ -1287,11 +1128,11 @@ footer{
                 </h3>
 
                 <p>
-                    Explore the game on Steam.
+                    Click to explore on Steam.
                 </p>
 
-                <span class="game-button">
-                    VIEW ON STEAM →
+                <span class="steam-button">
+                    STEAM →
                 </span>
 
             </div>
@@ -1310,13 +1151,9 @@ footer{
 
     <div class="title">
 
-        <small>
-            07 / CONTACT
-        </small>
+        <small>07 / CONTACT</small>
 
-        <h2>
-            Let's connect.
-        </h2>
+        <h2>Let's connect.</h2>
 
         <p>
             Follow my tech and PC-building journey.
@@ -1330,9 +1167,7 @@ footer{
 
         <div class="card">
 
-            <h3>
-                Instagram
-            </h3>
+            <h3>Instagram</h3>
 
             <p>
                 Follow my tech and PC journey.
@@ -1354,9 +1189,7 @@ footer{
 
         <div class="card">
 
-            <h3>
-                Get in touch
-            </h3>
+            <h3>Get in touch</h3>
 
             <p>
                 Email:
@@ -1380,7 +1213,6 @@ footer{
 
         </div>
 
-
     </div>
 
 </section>
@@ -1391,7 +1223,6 @@ footer{
     © 2026 LOLAN • PC Builder & Tech Enthusiast
 
 </footer>
-
 
 </body>
 </html>
