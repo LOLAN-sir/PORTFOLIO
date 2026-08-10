@@ -31,7 +31,7 @@ nav{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background:rgba(7,9,13,.85);
+    background:rgba(7,9,13,.88);
     backdrop-filter:blur(12px);
     border-bottom:1px solid #202631;
 }
@@ -49,7 +49,7 @@ nav{
 nav a{
     color:#aaa;
     text-decoration:none;
-    margin-left:25px;
+    margin-left:20px;
     transition:.3s;
 }
 
@@ -297,96 +297,145 @@ footer{
 
 
 /* =========================
-   GAMING CLICKABLE CARDS
-   ========================= */
+   GAMING CARDS
+========================= */
 
 .game-grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
     gap:22px;
-    margin-top:25px;
 }
 
 .game-card{
-    position:relative;
     min-height:280px;
-    padding:30px;
+    border:1px solid #29313d;
     border-radius:20px;
-    overflow:hidden;
+    padding:28px;
     text-decoration:none;
     color:white;
-
     display:flex;
-    flex-direction:column;
-    justify-content:flex-end;
-
-    border:1px solid #29313d;
-
+    align-items:flex-end;
+    position:relative;
+    overflow:hidden;
     background:
-        linear-gradient(
-            180deg,
-            transparent 15%,
-            rgba(0,0,0,.95) 100%
-        );
-
+    linear-gradient(145deg,#141922,#090c11);
     transition:.35s;
 }
 
 .game-card:hover{
-    transform:translateY(-8px) scale(1.01);
+    transform:translateY(-8px);
     border-color:#55d9ff;
-    box-shadow:0 15px 40px rgba(0,0,0,.5);
+    box-shadow:0 18px 45px rgba(0,0,0,.45);
 }
 
-.game-card.rdr2{
-    background:
-        linear-gradient(
-            180deg,
-            rgba(0,0,0,.05),
-            rgba(0,0,0,.95)
-        ),
-        url("https://cdn.akamai.steamstatic.com/steam/apps/1174180/header.jpg")
-        center/cover;
+.game-card:before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        180deg,
+        rgba(0,0,0,.05),
+        rgba(0,0,0,.92)
+    );
 }
 
-.game-card.ghost{
-    background:
-        linear-gradient(
-            180deg,
-            rgba(0,0,0,.05),
-            rgba(0,0,0,.95)
-        ),
-        url("https://cdn.akamai.steamstatic.com/steam/apps/2215430/header.jpg")
-        center/cover;
+.game-content{
+    position:relative;
+    z-index:2;
 }
 
-.game-card .game-label{
+.game-label{
     color:#55d9ff;
-    font-size:12px;
+    font-size:11px;
     letter-spacing:2px;
     font-weight:bold;
-    margin-bottom:7px;
 }
 
 .game-card h3{
-    font-size:30px;
-    margin-bottom:5px;
+    font-size:27px;
+    margin:7px 0;
 }
 
 .game-card p{
-    color:#d0d5dc;
+    color:#c2c8d1;
     font-size:14px;
 }
 
-.game-card .click{
-    margin-top:15px;
+.game-button{
     display:inline-block;
-    width:max-content;
-    padding:8px 14px;
-    border:1px solid rgba(255,255,255,.3);
-    border-radius:8px;
+    margin-top:15px;
+    padding:9px 15px;
+    border-radius:9px;
+    background:white;
+    color:#07090d;
     font-size:13px;
     font-weight:bold;
+}
+
+
+/* Game backgrounds */
+
+.game-spiderman{
+    background:
+    linear-gradient(180deg,transparent,rgba(0,0,0,.95)),
+    url("https://cdn.akamai.steamstatic.com/steam/apps/1817070/header.jpg")
+    center/cover;
+}
+
+.game-rdr2{
+    background:
+    linear-gradient(180deg,transparent,rgba(0,0,0,.95)),
+    url("https://cdn.akamai.steamstatic.com/steam/apps/1174180/header.jpg")
+    center/cover;
+}
+
+.game-gta{
+    background:
+    linear-gradient(180deg,transparent,rgba(0,0,0,.95)),
+    url("https://cdn.akamai.steamstatic.com/steam/apps/3240220/header.jpg")
+    center/cover;
+}
+
+.game-gow{
+    background:
+    linear-gradient(180deg,transparent,rgba(0,0,0,.95)),
+    url("https://cdn.akamai.steamstatic.com/steam/apps/1593500/header.jpg")
+    center/cover;
+}
+
+.game-ghost{
+    background:
+    linear-gradient(180deg,transparent,rgba(0,0,0,.95)),
+    url("https://cdn.akamai.steamstatic.com/steam/apps/2215430/header.jpg")
+    center/cover;
+}
+
+.game-forza{
+    background:
+    linear-gradient(180deg,transparent,rgba(0,0,0,.95)),
+    url("https://cdn.akamai.steamstatic.com/steam/apps/1551360/header.jpg")
+    center/cover;
+}
+
+.game-fc3{
+    background:
+    linear-gradient(180deg,transparent,rgba(0,0,0,.95)),
+    url("https://cdn.akamai.steamstatic.com/steam/apps/220240/header.jpg")
+    center/cover;
+}
+
+.game-fc4{
+    background:
+    linear-gradient(180deg,transparent,rgba(0,0,0,.95)),
+    url("https://cdn.akamai.steamstatic.com/steam/apps/298110/header.jpg")
+    center/cover;
+}
+
+.game-primal{
+    background:
+    linear-gradient(180deg,transparent,rgba(0,0,0,.95)),
+    url("https://cdn.akamai.steamstatic.com/steam/apps/371660/header.jpg")
+    center/cover;
 }
 
 
@@ -418,18 +467,23 @@ footer{
         grid-template-columns:1fr;
     }
 
-    h1{
-        letter-spacing:-4px;
-    }
-
     .game-card{
         min-height:250px;
+    }
+
+    .game-card h3{
+        font-size:22px;
+    }
+
+    h1{
+        letter-spacing:-4px;
     }
 
 }
 
 </style>
 </head>
+
 
 <body>
 
@@ -503,9 +557,7 @@ footer{
 
         <small>01 / ABOUT ME</small>
 
-        <h2>
-            More than a hobby.
-        </h2>
+        <h2>More than a hobby.</h2>
 
         <p>
             A student journey built around curiosity, hardware
@@ -517,6 +569,7 @@ footer{
 
 
     <div class="grid">
+
 
         <div class="card">
 
@@ -531,13 +584,12 @@ footer{
 
         <div class="card">
 
-            <h3>
-                Who I Am
-            </h3>
+            <h3>Who I Am</h3>
 
             <p>
-                I'm a Plus Two Electronics student at St. Aloysius
-                School, Thrissur. I'm interested in PC hardware,
+                I'm a Plus Two Electronics student at
+                St. Aloysius School, Thrissur.
+                I'm interested in PC hardware,
                 troubleshooting, gaming and electronics.
             </p>
 
@@ -549,21 +601,39 @@ footer{
                 technology.
             </p>
 
+
             <div class="stats">
 
                 <div class="stat">
+
                     <strong>PC</strong>
-                    <span>Building & Repair</span>
+
+                    <span>
+                        Building & Repair
+                    </span>
+
                 </div>
 
+
                 <div class="stat">
+
                     <strong>IoT</strong>
-                    <span>Learning</span>
+
+                    <span>
+                        Learning
+                    </span>
+
                 </div>
 
+
                 <div class="stat">
+
                     <strong>Python</strong>
-                    <span>Beginner</span>
+
+                    <span>
+                        Beginner
+                    </span>
+
                 </div>
 
             </div>
@@ -816,7 +886,6 @@ footer{
 
         </div>
 
-
     </div>
 
 </section>
@@ -842,7 +911,9 @@ footer{
 
         <div class="timeline-item">
 
-            <small>START</small>
+            <small>
+                START
+            </small>
 
             <h3>
                 Discovered PC Building
@@ -859,7 +930,9 @@ footer{
 
         <div class="timeline-item">
 
-            <small>BUILD</small>
+            <small>
+                BUILD
+            </small>
 
             <h3>
                 Built My Primary PC
@@ -875,7 +948,9 @@ footer{
 
         <div class="timeline-item">
 
-            <small>NOW</small>
+            <small>
+                NOW
+            </small>
 
             <h3>
                 Plus Two Electronics
@@ -891,7 +966,9 @@ footer{
 
         <div class="timeline-item">
 
-            <small>NEXT</small>
+            <small>
+                NEXT
+            </small>
 
             <h3>
                 Computer Engineering
@@ -916,50 +993,148 @@ footer{
 
     <div class="title">
 
-        <small>06 / GAMING</small>
+        <small>
+            06 / GAMING
+        </small>
 
         <h2>
-            Gaming is part of the journey.
+            Games I Play.
         </h2>
 
         <p>
-            I enjoy gaming while also using games as a way to
-            understand hardware performance and optimization.
+            Click any game card to explore it on Steam.
         </p>
 
     </div>
 
 
-    <!-- CLICKABLE GAME CARDS -->
-
     <div class="game-grid">
 
 
-        <!-- RED DEAD REDEMPTION 2 -->
+        <!-- SPIDER-MAN -->
 
         <a
-            class="game-card rdr2"
+            class="game-card game-spiderman"
+            href="https://store.steampowered.com/search/?term=Marvel%27s%20Spider-Man%20Miles%20Morales"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <div class="game-content">
+
+                <div class="game-label">
+                    MARVEL
+                </div>
+
+                <h3>
+                    Spider-Man Miles Morales
+                </h3>
+
+                <p>
+                    Explore the game on Steam.
+                </p>
+
+                <span class="game-button">
+                    VIEW ON STEAM →
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- RDR2 -->
+
+        <a
+            class="game-card game-rdr2"
             href="https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/"
             target="_blank"
             rel="noopener noreferrer"
         >
 
-            <div class="game-label">
-                GAME • STEAM
+            <div class="game-content">
+
+                <div class="game-label">
+                    ROCKSTAR GAMES
+                </div>
+
+                <h3>
+                    Red Dead Redemption 2
+                </h3>
+
+                <p>
+                    Explore the game on Steam.
+                </p>
+
+                <span class="game-button">
+                    VIEW ON STEAM →
+                </span>
+
             </div>
 
-            <h3>
-                Red Dead Redemption 2
-            </h3>
+        </a>
 
-            <p>
-                One of the games I enjoy playing and testing
-                on my PC.
-            </p>
 
-            <span class="click">
-                VIEW ON STEAM →
-            </span>
+        <!-- GTA V -->
+
+        <a
+            class="game-card game-gta"
+            href="https://store.steampowered.com/search/?term=Grand%20Theft%20Auto%20V"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <div class="game-content">
+
+                <div class="game-label">
+                    ROCKSTAR GAMES
+                </div>
+
+                <h3>
+                    GTA V
+                </h3>
+
+                <p>
+                    Explore the game on Steam.
+                </p>
+
+                <span class="game-button">
+                    VIEW ON STEAM →
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- GOD OF WAR -->
+
+        <a
+            class="game-card game-gow"
+            href="https://store.steampowered.com/search/?term=God%20of%20War"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <div class="game-content">
+
+                <div class="game-label">
+                    SONY
+                </div>
+
+                <h3>
+                    God of War
+                </h3>
+
+                <p>
+                    Explore the game on Steam.
+                </p>
+
+                <span class="game-button">
+                    VIEW ON STEAM →
+                </span>
+
+            </div>
 
         </a>
 
@@ -967,73 +1142,162 @@ footer{
         <!-- GHOST OF TSUSHIMA -->
 
         <a
-            class="game-card ghost"
+            class="game-card game-ghost"
             href="https://store.steampowered.com/app/2215430/Ghost_of_Tsushima_DIRECTORS_CUT/"
             target="_blank"
             rel="noopener noreferrer"
         >
 
-            <div class="game-label">
-                GAME • STEAM
+            <div class="game-content">
+
+                <div class="game-label">
+                    SONY
+                </div>
+
+                <h3>
+                    Ghost of Tsushima
+                </h3>
+
+                <p>
+                    Explore the game on Steam.
+                </p>
+
+                <span class="game-button">
+                    VIEW ON STEAM →
+                </span>
+
             </div>
-
-            <h3>
-                Ghost of Tsushima
-            </h3>
-
-            <p>
-                Another major title I have explored on my
-                gaming PC.
-            </p>
-
-            <span class="click">
-                VIEW ON STEAM →
-            </span>
 
         </a>
 
 
-    </div>
+        <!-- FORZA HORIZON 5 -->
+
+        <a
+            class="game-card game-forza"
+            href="https://store.steampowered.com/app/1551360/Forza_Horizon_5/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <div class="game-content">
+
+                <div class="game-label">
+                    XBOX GAME STUDIOS
+                </div>
+
+                <h3>
+                    Forza Horizon 5
+                </h3>
+
+                <p>
+                    Explore the game on Steam.
+                </p>
+
+                <span class="game-button">
+                    VIEW ON STEAM →
+                </span>
+
+            </div>
+
+        </a>
 
 
-    <br>
+        <!-- FAR CRY 3 -->
+
+        <a
+            class="game-card game-fc3"
+            href="https://store.steampowered.com/app/220240/Far_Cry_3/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <div class="game-content">
+
+                <div class="game-label">
+                    UBISOFT
+                </div>
+
+                <h3>
+                    Far Cry 3
+                </h3>
+
+                <p>
+                    Explore the game on Steam.
+                </p>
+
+                <span class="game-button">
+                    VIEW ON STEAM →
+                </span>
+
+            </div>
+
+        </a>
 
 
-    <!-- OTHER GAMES -->
+        <!-- FAR CRY 4 -->
 
-    <div class="card">
+        <a
+            class="game-card game-fc4"
+            href="https://store.steampowered.com/app/298110/Far_Cry_4/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
 
-        <div class="skills">
+            <div class="game-content">
 
-            <span class="skill">
-                Spider-Man Miles Morales
-            </span>
+                <div class="game-label">
+                    UBISOFT
+                </div>
 
-            <span class="skill">
-                GTA V
-            </span>
+                <h3>
+                    Far Cry 4
+                </h3>
 
-            <span class="skill">
-                God of War
-            </span>
+                <p>
+                    Explore the game on Steam.
+                </p>
 
-            <span class="skill">
-                Forza Horizon 5
-            </span>
+                <span class="game-button">
+                    VIEW ON STEAM →
+                </span>
 
-            <span class="skill">
-                Far Cry 3
-            </span>
+            </div>
 
-            <span class="skill">
-                Far Cry 4
-            </span>
+        </a>
 
-            <span class="skill">
-                Far Cry Primal
-            </span>
 
-        </div>
+        <!-- FAR CRY PRIMAL -->
+
+        <a
+            class="game-card game-primal"
+            href="https://store.steampowered.com/app/371660/Far_Cry_Primal/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <div class="game-content">
+
+                <div class="game-label">
+                    UBISOFT
+                </div>
+
+                <h3>
+                    Far Cry Primal
+                </h3>
+
+                <p>
+                    Explore the game on Steam.
+                </p>
+
+                <span class="game-button">
+                    VIEW ON STEAM →
+                </span>
+
+            </div>
+
+        </a>
+
 
     </div>
 
@@ -1046,7 +1310,9 @@ footer{
 
     <div class="title">
 
-        <small>07 / CONTACT</small>
+        <small>
+            07 / CONTACT
+        </small>
 
         <h2>
             Let's connect.
@@ -1093,7 +1359,6 @@ footer{
             </h3>
 
             <p>
-
                 Email:
                 <a
                     href="mailto:abhinandrambinu@gmail.com"
@@ -1101,11 +1366,9 @@ footer{
                 >
                     abhinandrambinu@gmail.com
                 </a>
-
             </p>
 
             <p>
-
                 Phone:
                 <a
                     href="tel:+918943942354"
@@ -1113,7 +1376,6 @@ footer{
                 >
                     +91 8943942354
                 </a>
-
             </p>
 
         </div>
@@ -1123,8 +1385,6 @@ footer{
 
 </section>
 
-
-<!-- FOOTER -->
 
 <footer>
 
