@@ -277,7 +277,7 @@ h1{
 
 
 /* =========================
-   GAMING CARDS
+   STEAM GAME CARDS
 ========================= */
 
 .game-grid{
@@ -287,23 +287,23 @@ h1{
 }
 
 .game-card{
-    min-height:300px;
+    height:390px;
     position:relative;
     overflow:hidden;
-    border-radius:20px;
+    border-radius:18px;
     border:1px solid #29313d;
-    background:#0d1118;
-    color:white;
+    background:#10141b;
     text-decoration:none;
+    color:white;
     transition:.35s;
     display:flex;
     align-items:flex-end;
 }
 
 .game-card:hover{
-    transform:translateY(-8px) scale(1.01);
+    transform:translateY(-8px) scale(1.015);
     border-color:#55d9ff;
-    box-shadow:0 20px 50px rgba(0,0,0,.55);
+    box-shadow:0 20px 55px rgba(0,0,0,.65);
 }
 
 .game-image{
@@ -312,24 +312,24 @@ h1{
     width:100%;
     height:100%;
     object-fit:cover;
-    opacity:.42;
-    transition:.4s;
+    transition:.5s;
 }
 
 .game-card:hover .game-image{
-    opacity:.55;
-    transform:scale(1.06);
+    transform:scale(1.07);
 }
 
 .game-overlay{
     position:absolute;
     inset:0;
-    background:linear-gradient(
-        to top,
-        #05070bdc 0%,
-        #05070b99 45%,
-        transparent 100%
-    );
+    background:
+        linear-gradient(
+            to top,
+            rgba(3,5,8,.98) 0%,
+            rgba(3,5,8,.72) 32%,
+            rgba(3,5,8,.15) 70%,
+            transparent 100%
+        );
 }
 
 .game-content{
@@ -348,7 +348,8 @@ h1{
 
 .game-content h3{
     font-size:24px;
-    margin:5px 0;
+    line-height:1.15;
+    margin:6px 0;
 }
 
 .game-content p{
@@ -358,36 +359,22 @@ h1{
 
 .steam-button{
     display:inline-block;
-    margin-top:14px;
+    margin-top:13px;
     padding:9px 15px;
-    border-radius:9px;
-    background:white;
+    border-radius:8px;
+    background:#ffffff;
     color:#07090d;
     font-size:12px;
     font-weight:bold;
+    transition:.25s;
+}
+
+.game-card:hover .steam-button{
+    transform:translateX(4px);
 }
 
 
-/* =========================
-   PHOTO PLACEHOLDER
-========================= */
-
-.no-photo{
-    position:absolute;
-    inset:0;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    font-size:50px;
-    background:
-    radial-gradient(circle at 50% 30%,#17364b,#0a0d13 65%);
-}
-
-
-/* =========================
-   CONTACT
-========================= */
+/* CONTACT */
 
 .contact{
     text-align:center;
@@ -405,11 +392,9 @@ footer{
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
-@media(max-width:900px){
+@media(max-width:950px){
 
     .game-grid{
         grid-template-columns:repeat(2,1fr);
@@ -417,7 +402,7 @@ footer{
 
 }
 
-@media(max-width:650px){
+@media(max-width:700px){
 
     nav .links{
         display:none;
@@ -439,6 +424,10 @@ footer{
         grid-template-columns:1fr;
     }
 
+    .game-card{
+        height:420px;
+    }
+
     h1{
         letter-spacing:-4px;
     }
@@ -451,9 +440,7 @@ footer{
 <body>
 
 
-<!-- =========================
-     NAVIGATION
-========================= -->
+<!-- NAV -->
 
 <nav>
 
@@ -473,9 +460,7 @@ footer{
 </nav>
 
 
-<!-- =========================
-     HERO
-========================= -->
+<!-- HERO -->
 
 <section class="hero" id="home">
 
@@ -512,9 +497,7 @@ footer{
 </section>
 
 
-<!-- =========================
-     ABOUT
-========================= -->
+<!-- ABOUT -->
 
 <section id="about">
 
@@ -590,9 +573,7 @@ footer{
 </section>
 
 
-<!-- =========================
-     PC BUILD
-========================= -->
+<!-- PC BUILD -->
 
 <section id="build">
 
@@ -653,9 +634,7 @@ footer{
 </section>
 
 
-<!-- =========================
-     SKILLS
-========================= -->
+<!-- SKILLS -->
 
 <section id="skills">
 
@@ -692,9 +671,7 @@ footer{
 </section>
 
 
-<!-- =========================
-     PROJECTS
-========================= -->
+<!-- PROJECTS -->
 
 <section id="projects">
 
@@ -713,7 +690,6 @@ footer{
 
 
     <div class="grid">
-
 
         <div class="card project">
 
@@ -785,9 +761,7 @@ footer{
 </section>
 
 
-<!-- =========================
-     JOURNEY
-========================= -->
+<!-- JOURNEY -->
 
 <section>
 
@@ -876,9 +850,7 @@ footer{
         <h2>My Gaming Library.</h2>
 
         <p>
-            Click any game card to open its Steam page.
-            RDR2 and Ghost of Tsushima are ready for your
-            personal screenshots.
+            Click any card to open its Steam store page.
         </p>
 
     </div>
@@ -889,16 +861,14 @@ footer{
 
         <!-- RDR2 -->
 
-        <a
-            class="game-card"
-            href="https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
+        <a class="game-card"
+           href="https://store.steampowered.com/app/1174180/"
+           target="_blank"
+           rel="noopener noreferrer">
 
-            <div class="no-photo">
-                🤠
-            </div>
+            <img class="game-image"
+                 src="https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/header.jpg"
+                 alt="Red Dead Redemption 2">
 
             <div class="game-overlay"></div>
 
@@ -908,13 +878,9 @@ footer{
                     ROCKSTAR GAMES
                 </div>
 
-                <h3>
-                    Red Dead Redemption 2
-                </h3>
+                <h3>Red Dead Redemption 2</h3>
 
-                <p>
-                    Click the card to open Steam.
-                </p>
+                <p>Open Steam store page</p>
 
                 <span class="steam-button">
                     STEAM →
@@ -927,16 +893,14 @@ footer{
 
         <!-- GHOST OF TSUSHIMA -->
 
-        <a
-            class="game-card"
-            href="https://store.steampowered.com/app/2215430/Ghost_of_Tsushima_DIRECTORS_CUT/"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
+        <a class="game-card"
+           href="https://store.steampowered.com/app/2215430/"
+           target="_blank"
+           rel="noopener noreferrer">
 
-            <div class="no-photo">
-                🗡️
-            </div>
+            <img class="game-image"
+                 src="https://cdn.cloudflare.steamstatic.com/steam/apps/2215430/header.jpg"
+                 alt="Ghost of Tsushima DIRECTOR'S CUT">
 
             <div class="game-overlay"></div>
 
@@ -946,13 +910,9 @@ footer{
                     PLAYSTATION PC
                 </div>
 
-                <h3>
-                    Ghost of Tsushima
-                </h3>
+                <h3>Ghost of Tsushima</h3>
 
-                <p>
-                    Click the card to open Steam.
-                </p>
+                <p>Open Steam store page</p>
 
                 <span class="steam-button">
                     STEAM →
@@ -965,16 +925,14 @@ footer{
 
         <!-- GTA V -->
 
-        <a
-            class="game-card"
-            href="https://store.steampowered.com/app/3240220/Grand_Theft_Auto_V_Enhanced/"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
+        <a class="game-card"
+           href="https://store.steampowered.com/app/3240220/"
+           target="_blank"
+           rel="noopener noreferrer">
 
-            <div class="no-photo">
-                🚗
-            </div>
+            <img class="game-image"
+                 src="https://cdn.cloudflare.steamstatic.com/steam/apps/3240220/header.jpg"
+                 alt="Grand Theft Auto V">
 
             <div class="game-overlay"></div>
 
@@ -984,13 +942,9 @@ footer{
                     ROCKSTAR GAMES
                 </div>
 
-                <h3>
-                    Grand Theft Auto V
-                </h3>
+                <h3>Grand Theft Auto V</h3>
 
-                <p>
-                    Click the card to open Steam.
-                </p>
+                <p>Open Steam store page</p>
 
                 <span class="steam-button">
                     STEAM →
@@ -1003,16 +957,14 @@ footer{
 
         <!-- SPIDER-MAN -->
 
-        <a
-            class="game-card"
-            href="https://store.steampowered.com/app/1817190/Marvels_SpiderMan_Miles_Morales/"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
+        <a class="game-card"
+           href="https://store.steampowered.com/app/1817190/"
+           target="_blank"
+           rel="noopener noreferrer">
 
-            <div class="no-photo">
-                🕷️
-            </div>
+            <img class="game-image"
+                 src="https://cdn.cloudflare.steamstatic.com/steam/apps/1817190/header.jpg"
+                 alt="Marvel's Spider-Man Miles Morales">
 
             <div class="game-overlay"></div>
 
@@ -1022,13 +974,9 @@ footer{
                     MARVEL
                 </div>
 
-                <h3>
-                    Spider-Man Miles Morales
-                </h3>
+                <h3>Spider-Man Miles Morales</h3>
 
-                <p>
-                    Click the card to open Steam.
-                </p>
+                <p>Open Steam store page</p>
 
                 <span class="steam-button">
                     STEAM →
@@ -1041,16 +989,14 @@ footer{
 
         <!-- GOD OF WAR -->
 
-        <a
-            class="game-card"
-            href="https://store.steampowered.com/app/1593500/God_of_War/"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
+        <a class="game-card"
+           href="https://store.steampowered.com/app/1593500/"
+           target="_blank"
+           rel="noopener noreferrer">
 
-            <div class="no-photo">
-                ⚔️
-            </div>
+            <img class="game-image"
+                 src="https://cdn.cloudflare.steamstatic.com/steam/apps/1593500/header.jpg"
+                 alt="God of War">
 
             <div class="game-overlay"></div>
 
@@ -1060,13 +1006,9 @@ footer{
                     PLAYSTATION PC
                 </div>
 
-                <h3>
-                    God of War
-                </h3>
+                <h3>God of War</h3>
 
-                <p>
-                    Click the card to open Steam.
-                </p>
+                <p>Open Steam store page</p>
 
                 <span class="steam-button">
                     STEAM →
@@ -1079,16 +1021,14 @@ footer{
 
         <!-- FORZA HORIZON 5 -->
 
-        <a
-            class="game-card"
-            href="https://store.steampowered.com/app/1551360/Forza_Horizon_5/"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
+        <a class="game-card"
+           href="https://store.steampowered.com/app/1551360/"
+           target="_blank"
+           rel="noopener noreferrer">
 
-            <div class="no-photo">
-                🏎️
-            </div>
+            <img class="game-image"
+                 src="https://cdn.cloudflare.steamstatic.com/steam/apps/1551360/header.jpg"
+                 alt="Forza Horizon 5">
 
             <div class="game-overlay"></div>
 
@@ -1098,13 +1038,9 @@ footer{
                     XBOX GAME STUDIOS
                 </div>
 
-                <h3>
-                    Forza Horizon 5
-                </h3>
+                <h3>Forza Horizon 5</h3>
 
-                <p>
-                    Click the card to open Steam.
-                </p>
+                <p>Open Steam store page</p>
 
                 <span class="steam-button">
                     STEAM →
@@ -1117,16 +1053,14 @@ footer{
 
         <!-- FAR CRY 3 -->
 
-        <a
-            class="game-card"
-            href="https://store.steampowered.com/app/220240/Far_Cry_3/"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
+        <a class="game-card"
+           href="https://store.steampowered.com/app/220240/"
+           target="_blank"
+           rel="noopener noreferrer">
 
-            <div class="no-photo">
-                🎯
-            </div>
+            <img class="game-image"
+                 src="https://cdn.cloudflare.steamstatic.com/steam/apps/220240/header.jpg"
+                 alt="Far Cry 3">
 
             <div class="game-overlay"></div>
 
@@ -1136,13 +1070,9 @@ footer{
                     UBISOFT
                 </div>
 
-                <h3>
-                    Far Cry 3
-                </h3>
+                <h3>Far Cry 3</h3>
 
-                <p>
-                    Click the card to open Steam.
-                </p>
+                <p>Open Steam store page</p>
 
                 <span class="steam-button">
                     STEAM →
@@ -1155,16 +1085,14 @@ footer{
 
         <!-- FAR CRY 4 -->
 
-        <a
-            class="game-card"
-            href="https://store.steampowered.com/app/298110/Far_Cry_4/"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
+        <a class="game-card"
+           href="https://store.steampowered.com/app/298110/"
+           target="_blank"
+           rel="noopener noreferrer">
 
-            <div class="no-photo">
-                🏔️
-            </div>
+            <img class="game-image"
+                 src="https://cdn.cloudflare.steamstatic.com/steam/apps/298110/header.jpg"
+                 alt="Far Cry 4">
 
             <div class="game-overlay"></div>
 
@@ -1174,13 +1102,9 @@ footer{
                     UBISOFT
                 </div>
 
-                <h3>
-                    Far Cry 4
-                </h3>
+                <h3>Far Cry 4</h3>
 
-                <p>
-                    Click the card to open Steam.
-                </p>
+                <p>Open Steam store page</p>
 
                 <span class="steam-button">
                     STEAM →
@@ -1193,16 +1117,14 @@ footer{
 
         <!-- FAR CRY PRIMAL -->
 
-        <a
-            class="game-card"
-            href="https://store.steampowered.com/app/371660/Far_Cry_Primal/"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
+        <a class="game-card"
+           href="https://store.steampowered.com/app/371660/"
+           target="_blank"
+           rel="noopener noreferrer">
 
-            <div class="no-photo">
-                🦴
-            </div>
+            <img class="game-image"
+                 src="https://cdn.cloudflare.steamstatic.com/steam/apps/371660/header.jpg"
+                 alt="Far Cry Primal">
 
             <div class="game-overlay"></div>
 
@@ -1212,13 +1134,9 @@ footer{
                     UBISOFT
                 </div>
 
-                <h3>
-                    Far Cry Primal
-                </h3>
+                <h3>Far Cry Primal</h3>
 
-                <p>
-                    Click the card to open Steam.
-                </p>
+                <p>Open Steam store page</p>
 
                 <span class="steam-button">
                     STEAM →
@@ -1234,9 +1152,7 @@ footer{
 </section>
 
 
-<!-- =========================
-     CONTACT
-========================= -->
+<!-- CONTACT -->
 
 <section id="contact" class="contact">
 
@@ -1266,13 +1182,13 @@ footer{
 
             <br>
 
-            <a
-                class="btn"
-                href="https://www.instagram.com/abhinand_ram_binu/"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
+            <a class="btn"
+               href="https://www.instagram.com/abhinand_ram_binu/"
+               target="_blank"
+               rel="noopener noreferrer">
+
                 @abhinand_ram_binu
+
             </a>
 
         </div>
