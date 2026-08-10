@@ -7,6 +7,7 @@
 <title>LOLAN | PC Builder</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -294,6 +295,103 @@ footer{
     border-top:1px solid #202631;
 }
 
+
+/* =========================
+   GAMING CLICKABLE CARDS
+   ========================= */
+
+.game-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+    margin-top:25px;
+}
+
+.game-card{
+    position:relative;
+    min-height:280px;
+    padding:30px;
+    border-radius:20px;
+    overflow:hidden;
+    text-decoration:none;
+    color:white;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+
+    border:1px solid #29313d;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 15%,
+            rgba(0,0,0,.95) 100%
+        );
+
+    transition:.35s;
+}
+
+.game-card:hover{
+    transform:translateY(-8px) scale(1.01);
+    border-color:#55d9ff;
+    box-shadow:0 15px 40px rgba(0,0,0,.5);
+}
+
+.game-card.rdr2{
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,.05),
+            rgba(0,0,0,.95)
+        ),
+        url("https://cdn.akamai.steamstatic.com/steam/apps/1174180/header.jpg")
+        center/cover;
+}
+
+.game-card.ghost{
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,.05),
+            rgba(0,0,0,.95)
+        ),
+        url("https://cdn.akamai.steamstatic.com/steam/apps/2215430/header.jpg")
+        center/cover;
+}
+
+.game-card .game-label{
+    color:#55d9ff;
+    font-size:12px;
+    letter-spacing:2px;
+    font-weight:bold;
+    margin-bottom:7px;
+}
+
+.game-card h3{
+    font-size:30px;
+    margin-bottom:5px;
+}
+
+.game-card p{
+    color:#d0d5dc;
+    font-size:14px;
+}
+
+.game-card .click{
+    margin-top:15px;
+    display:inline-block;
+    width:max-content;
+    padding:8px 14px;
+    border:1px solid rgba(255,255,255,.3);
+    border-radius:8px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+
+/* MOBILE */
+
 @media(max-width:750px){
 
     nav{
@@ -316,25 +414,45 @@ footer{
         grid-template-columns:1fr;
     }
 
+    .game-grid{
+        grid-template-columns:1fr;
+    }
+
     h1{
         letter-spacing:-4px;
     }
+
+    .game-card{
+        min-height:250px;
+    }
+
 }
+
 </style>
 </head>
 
 <body>
 
+
+<!-- NAVIGATION -->
+
 <nav>
-    <div class="logo">LO<span>LAN</span></div>
+
+    <div class="logo">
+        LO<span>LAN</span>
+    </div>
 
     <div class="links">
+
         <a href="#about">About</a>
         <a href="#build">Build</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
+        <a href="#gaming">Gaming</a>
         <a href="#contact">Contact</a>
+
     </div>
+
 </nav>
 
 
@@ -350,7 +468,9 @@ footer{
 
         <h1>LOLAN</h1>
 
-        <h2>Building. Repairing. Experimenting.</h2>
+        <h2>
+            Building. Repairing. Experimenting.
+        </h2>
 
         <p>
             I'm Abhinand, known as LOLAN — a tech enthusiast and
@@ -359,6 +479,7 @@ footer{
         </p>
 
         <div class="buttons">
+
             <a class="btn primary" href="#build">
                 Explore My PC
             </a>
@@ -366,6 +487,7 @@ footer{
             <a class="btn" href="#contact">
                 Contact Me
             </a>
+
         </div>
 
     </div>
@@ -378,15 +500,19 @@ footer{
 <section id="about">
 
     <div class="title">
+
         <small>01 / ABOUT ME</small>
 
-        <h2>More than a hobby.</h2>
+        <h2>
+            More than a hobby.
+        </h2>
 
         <p>
             A student journey built around curiosity, hardware
             and the belief that old parts can still become
             something useful.
         </p>
+
     </div>
 
 
@@ -405,7 +531,9 @@ footer{
 
         <div class="card">
 
-            <h3>Who I Am</h3>
+            <h3>
+                Who I Am
+            </h3>
 
             <p>
                 I'm a Plus Two Electronics student at St. Aloysius
@@ -455,7 +583,9 @@ footer{
 
         <small>02 / FEATURED BUILD</small>
 
-        <h2>The PC that changed everything.</h2>
+        <h2>
+            The PC that changed everything.
+        </h2>
 
         <p>
             My primary gaming and editing PC — built through
@@ -468,8 +598,11 @@ footer{
     <div class="card">
 
         <div class="photo">
+
             📸<br>
+
             YOUR PC PHOTO WILL GO HERE
+
         </div>
 
 
@@ -477,7 +610,9 @@ footer{
 
             <div>
 
-                <h3>From scraps to a gaming machine</h3>
+                <h3>
+                    From scraps to a gaming machine
+                </h3>
 
                 <p>
                     I started with parts I could get instead of
@@ -491,7 +626,9 @@ footer{
 
             <div>
 
-                <h3>What it taught me</h3>
+                <h3>
+                    What it taught me
+                </h3>
 
                 <p>
                     Hardware compatibility, troubleshooting,
@@ -517,7 +654,9 @@ footer{
 
         <small>03 / SKILLS</small>
 
-        <h2>What I work with.</h2>
+        <h2>
+            What I work with.
+        </h2>
 
     </div>
 
@@ -526,7 +665,9 @@ footer{
 
         <div class="skills">
 
-            <span class="skill">PC Building</span>
+            <span class="skill">
+                PC Building
+            </span>
 
             <span class="skill">
                 Hardware Troubleshooting
@@ -587,7 +728,9 @@ footer{
 
         <small>04 / PROJECTS</small>
 
-        <h2>Things I build & explore.</h2>
+        <h2>
+            Things I build & explore.
+        </h2>
 
         <p>
             Real experience stays real. Future ideas are clearly
@@ -606,7 +749,9 @@ footer{
                 COMPLETED / ONGOING
             </div>
 
-            <h3>Primary PC Build</h3>
+            <h3>
+                Primary PC Build
+            </h3>
 
             <p>
                 A gaming and editing PC assembled and upgraded
@@ -623,7 +768,9 @@ footer{
                 ELECTRONICS
             </div>
 
-            <h3>School Electronics Project</h3>
+            <h3>
+                School Electronics Project
+            </h3>
 
             <p>
                 A school-level electronics project that gave me
@@ -640,7 +787,9 @@ footer{
                 EXPERIENCE
             </div>
 
-            <h3>PC Troubleshooting</h3>
+            <h3>
+                PC Troubleshooting
+            </h3>
 
             <p>
                 Windows crashes, loading problems, BIOS-related
@@ -656,7 +805,9 @@ footer{
                 FUTURE PROJECT
             </div>
 
-            <h3>Smart Pest Detection Concept</h3>
+            <h3>
+                Smart Pest Detection Concept
+            </h3>
 
             <p>
                 A future IoT concept exploring automated pest
@@ -679,7 +830,9 @@ footer{
 
         <small>05 / MY JOURNEY</small>
 
-        <h2>Still learning. Still building.</h2>
+        <h2>
+            Still learning. Still building.
+        </h2>
 
     </div>
 
@@ -691,7 +844,9 @@ footer{
 
             <small>START</small>
 
-            <h3>Discovered PC Building</h3>
+            <h3>
+                Discovered PC Building
+            </h3>
 
             <p>
                 I found myself drawn into computers and started
@@ -706,7 +861,9 @@ footer{
 
             <small>BUILD</small>
 
-            <h3>Built My Primary PC</h3>
+            <h3>
+                Built My Primary PC
+            </h3>
 
             <p>
                 A project that turned scraps and persistence into
@@ -720,7 +877,9 @@ footer{
 
             <small>NOW</small>
 
-            <h3>Plus Two Electronics</h3>
+            <h3>
+                Plus Two Electronics
+            </h3>
 
             <p>
                 Learning electronics while developing practical
@@ -734,7 +893,9 @@ footer{
 
             <small>NEXT</small>
 
-            <h3>Computer Engineering</h3>
+            <h3>
+                Computer Engineering
+            </h3>
 
             <p>
                 Deepening my knowledge of computers, programming,
@@ -751,13 +912,15 @@ footer{
 
 <!-- GAMING -->
 
-<section>
+<section id="gaming">
 
     <div class="title">
 
         <small>06 / GAMING</small>
 
-        <h2>Gaming is part of the journey.</h2>
+        <h2>
+            Gaming is part of the journey.
+        </h2>
 
         <p>
             I enjoy gaming while also using games as a way to
@@ -767,27 +930,108 @@ footer{
     </div>
 
 
+    <!-- CLICKABLE GAME CARDS -->
+
+    <div class="game-grid">
+
+
+        <!-- RED DEAD REDEMPTION 2 -->
+
+        <a
+            class="game-card rdr2"
+            href="https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <div class="game-label">
+                GAME • STEAM
+            </div>
+
+            <h3>
+                Red Dead Redemption 2
+            </h3>
+
+            <p>
+                One of the games I enjoy playing and testing
+                on my PC.
+            </p>
+
+            <span class="click">
+                VIEW ON STEAM →
+            </span>
+
+        </a>
+
+
+        <!-- GHOST OF TSUSHIMA -->
+
+        <a
+            class="game-card ghost"
+            href="https://store.steampowered.com/app/2215430/Ghost_of_Tsushima_DIRECTORS_CUT/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <div class="game-label">
+                GAME • STEAM
+            </div>
+
+            <h3>
+                Ghost of Tsushima
+            </h3>
+
+            <p>
+                Another major title I have explored on my
+                gaming PC.
+            </p>
+
+            <span class="click">
+                VIEW ON STEAM →
+            </span>
+
+        </a>
+
+
+    </div>
+
+
+    <br>
+
+
+    <!-- OTHER GAMES -->
+
     <div class="card">
 
         <div class="skills">
 
-            <span class="skill">Spider-Man Miles Morales</span>
+            <span class="skill">
+                Spider-Man Miles Morales
+            </span>
 
-            <span class="skill">Red Dead Redemption 2</span>
+            <span class="skill">
+                GTA V
+            </span>
 
-            <span class="skill">GTA V</span>
+            <span class="skill">
+                God of War
+            </span>
 
-            <span class="skill">God of War</span>
+            <span class="skill">
+                Forza Horizon 5
+            </span>
 
-            <span class="skill">Ghost of Tsushima</span>
+            <span class="skill">
+                Far Cry 3
+            </span>
 
-            <span class="skill">Forza Horizon 5</span>
+            <span class="skill">
+                Far Cry 4
+            </span>
 
-            <span class="skill">Far Cry 3</span>
-
-            <span class="skill">Far Cry 4</span>
-
-            <span class="skill">Far Cry Primal</span>
+            <span class="skill">
+                Far Cry Primal
+            </span>
 
         </div>
 
@@ -798,32 +1042,96 @@ footer{
 
 <!-- CONTACT -->
 
-<div class="card">
-    <h4>Instagram</h4>
-    <p>Follow my tech and PC journey.</p>
-    <br>
+<section id="contact" class="contact">
 
-    <a class="btn"
-       href="https://www.instagram.com/abhinand_ram_binu/"
-       target="_blank">
-        @abhinand_ram_binu
-    </a>
-</div>
+    <div class="title">
 
-<div class="card">
-    <h4>Get in touch</h4>
+        <small>07 / CONTACT</small>
 
-    <p>
-        Email:
-        <a href="mailto:abhinandrambinu@gmail.com">
-            abhinandrambinu@gmail.com
-        </a>
-    </p>
+        <h2>
+            Let's connect.
+        </h2>
 
-    <p>
-        Phone:
-        <a href="tel:+918943942354">
-            +91 8943942354
-        </a>
-    </p>
-</div>
+        <p>
+            Follow my tech and PC-building journey.
+        </p>
+
+    </div>
+
+
+    <div class="grid">
+
+
+        <div class="card">
+
+            <h3>
+                Instagram
+            </h3>
+
+            <p>
+                Follow my tech and PC journey.
+            </p>
+
+            <br>
+
+            <a
+                class="btn"
+                href="https://www.instagram.com/abhinand_ram_binu/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                @abhinand_ram_binu
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Get in touch
+            </h3>
+
+            <p>
+
+                Email:
+                <a
+                    href="mailto:abhinandrambinu@gmail.com"
+                    style="color:#55d9ff;"
+                >
+                    abhinandrambinu@gmail.com
+                </a>
+
+            </p>
+
+            <p>
+
+                Phone:
+                <a
+                    href="tel:+918943942354"
+                    style="color:#55d9ff;"
+                >
+                    +91 8943942354
+                </a>
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026 LOLAN • PC Builder & Tech Enthusiast
+
+</footer>
+
+
+</body>
+</html>
