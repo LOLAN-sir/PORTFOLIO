@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LOLAN | PC Builder</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#07090d;
+    color:#f5f7fa;
+    line-height:1.6;
+}
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(7,9,13,.85);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid #202631;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:900;
+    letter-spacing:3px;
+}
+
+.logo span{
+    color:#55d9ff;
+}
+
+nav a{
+    color:#aaa;
+    text-decoration:none;
+    margin-left:25px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#55d9ff;
+}
+
+section{
+    padding:110px 8%;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:
+    radial-gradient(circle at 80% 20%,#12324755,transparent 35%),
+    radial-gradient(circle at 20% 80%,#24205a44,transparent 35%);
+}
+
+.hero-content{
+    max-width:850px;
+    text-align:center;
+}
+
+.tag{
+    display:inline-block;
+    border:1px solid #293441;
+    color:#55d9ff;
+    padding:8px 15px;
+    border-radius:30px;
+    font-size:13px;
+    letter-spacing:2px;
+    margin-bottom:25px;
+}
+
+h1{
+    font-size:clamp(65px,13vw,150px);
+    line-height:.9;
+    letter-spacing:-7px;
+}
+
+.hero h2{
+    font-size:clamp(22px,4vw,40px);
+    margin:25px 0 15px;
+}
+
+.hero p{
+    color:#9ba5b3;
+    max-width:700px;
+    margin:auto;
+    font-size:18px;
+}
+
+.buttons{
+    margin-top:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:13px 22px;
+    margin:7px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+    border:1px solid #303744;
+    color:white;
+    transition:.3s;
+}
+
+.btn.primary{
+    background:white;
+    color:#07090d;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    border-color:#55d9ff;
+}
+
+.title{
+    margin-bottom:45px;
+}
+
+.title small{
+    color:#55d9ff;
+    letter-spacing:3px;
+    font-weight:bold;
+}
+
+.title h2{
+    font-size:clamp(35px,6vw,65px);
+    margin-top:8px;
+}
+
+.title p{
+    color:#8993a2;
+    max-width:700px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+}
+
+.card{
+    background:linear-gradient(145deg,#11151c,#0b0e13);
+    border:1px solid #242b36;
+    border-radius:20px;
+    padding:30px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    border-color:#55d9ff66;
+}
+
+.card h3{
+    font-size:25px;
+    margin-bottom:12px;
+}
+
+.card p{
+    color:#9aa3b0;
+}
+
+.quote{
+    font-size:25px;
+    color:#e9edf3 !important;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    margin-top:25px;
+}
+
+.stat{
+    padding:15px;
+    background:#090c11;
+    border:1px solid #222936;
+    border-radius:12px;
+}
+
+.stat strong{
+    display:block;
+    color:#55d9ff;
+    font-size:20px;
+}
+
+.stat span{
+    color:#7f8997;
+    font-size:13px;
+}
+
+.photo{
+    height:230px;
+    border-radius:15px;
+    border:1px dashed #3b4655;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#657080;
+    margin-bottom:25px;
+    background:#0b0e13;
+    text-align:center;
+}
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.skill{
+    padding:10px 15px;
+    border:1px solid #29313d;
+    border-radius:30px;
+    color:#cbd2dc;
+    background:#0b0e13;
+}
+
+.project{
+    min-height:260px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+}
+
+.project-label{
+    color:#55d9ff;
+    font-size:12px;
+    letter-spacing:2px;
+    font-weight:bold;
+}
+
+.project h3{
+    margin:8px 0;
+}
+
+.timeline{
+    border-left:2px solid #26303c;
+    padding-left:30px;
+}
+
+.timeline-item{
+    margin-bottom:35px;
+    position:relative;
+}
+
+.timeline-item:before{
+    content:"";
+    width:10px;
+    height:10px;
+    background:#55d9ff;
+    border-radius:50%;
+    position:absolute;
+    left:-36px;
+    top:8px;
+}
+
+.timeline-item small{
+    color:#55d9ff;
+    letter-spacing:2px;
+}
+
+.timeline-item h3{
+    margin:5px 0;
+}
+
+.contact{
+    text-align:center;
+}
+
+footer{
+    text-align:center;
+    padding:35px;
+    color:#68717e;
+    border-top:1px solid #202631;
+}
+
+@media(max-width:750px){
+
+    nav{
+        padding:16px 5%;
+    }
+
+    nav .links{
+        display:none;
+    }
+
+    section{
+        padding:90px 6%;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    h1{
+        letter-spacing:-4px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">LO<span>LAN</span></div>
+
+    <div class="links">
+        <a href="#about">About</a>
+        <a href="#build">Build</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="tag">
+            PC BUILDER • TECH ENTHUSIAST • ELECTRONICS STUDENT
+        </div>
+
+        <h1>LOLAN</h1>
+
+        <h2>Building. Repairing. Experimenting.</h2>
+
+        <p>
+            I'm Abhinand, known as LOLAN — a tech enthusiast and
+            PC builder who loves computers, hardware, gaming and
+            electronics.
+        </p>
+
+        <div class="buttons">
+            <a class="btn primary" href="#build">
+                Explore My PC
+            </a>
+
+            <a class="btn" href="#contact">
+                Contact Me
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="title">
+        <small>01 / ABOUT ME</small>
+
+        <h2>More than a hobby.</h2>
+
+        <p>
+            A student journey built around curiosity, hardware
+            and the belief that old parts can still become
+            something useful.
+        </p>
+    </div>
+
+
+    <div class="grid">
+
+        <div class="card">
+
+            <p class="quote">
+                "I started with scraps and a belief that I could
+                make something work. That mindset became my passion
+                for PC building."
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Who I Am</h3>
+
+            <p>
+                I'm a Plus Two Electronics student at St. Aloysius
+                School, Thrissur. I'm interested in PC hardware,
+                troubleshooting, gaming and electronics.
+            </p>
+
+            <br>
+
+            <p>
+                My goal is to become a computer engineer while
+                continuing to explore gaming, hardware and
+                technology.
+            </p>
+
+            <div class="stats">
+
+                <div class="stat">
+                    <strong>PC</strong>
+                    <span>Building & Repair</span>
+                </div>
+
+                <div class="stat">
+                    <strong>IoT</strong>
+                    <span>Learning</span>
+                </div>
+
+                <div class="stat">
+                    <strong>Python</strong>
+                    <span>Beginner</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PC BUILD -->
+
+<section id="build">
+
+    <div class="title">
+
+        <small>02 / FEATURED BUILD</small>
+
+        <h2>The PC that changed everything.</h2>
+
+        <p>
+            My primary gaming and editing PC — built through
+            upgrades, compromises, troubleshooting and persistence.
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="photo">
+            📸<br>
+            YOUR PC PHOTO WILL GO HERE
+        </div>
+
+
+        <div class="grid">
+
+            <div>
+
+                <h3>From scraps to a gaming machine</h3>
+
+                <p>
+                    I started with parts I could get instead of
+                    buying a complete system. I kept working through
+                    problems and upgrades until the machine became
+                    a capable gaming and editing PC.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>What it taught me</h3>
+
+                <p>
+                    Hardware compatibility, troubleshooting,
+                    Windows problems, BIOS issues, performance
+                    tuning and most importantly — confidence in
+                    solving technical problems myself.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <div class="title">
+
+        <small>03 / SKILLS</small>
+
+        <h2>What I work with.</h2>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="skills">
+
+            <span class="skill">PC Building</span>
+
+            <span class="skill">
+                Hardware Troubleshooting
+            </span>
+
+            <span class="skill">
+                Windows Troubleshooting
+            </span>
+
+            <span class="skill">
+                BIOS / Boot Troubleshooting
+            </span>
+
+            <span class="skill">
+                Game File Troubleshooting
+            </span>
+
+            <span class="skill">
+                DLL Error Troubleshooting
+            </span>
+
+            <span class="skill">
+                Gaming Performance
+            </span>
+
+            <span class="skill">
+                Arduino
+            </span>
+
+            <span class="skill">
+                Raspberry Pi
+            </span>
+
+            <span class="skill">
+                Sensors
+            </span>
+
+            <span class="skill">
+                Electronics
+            </span>
+
+            <span class="skill">
+                Python — Beginner
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+    <div class="title">
+
+        <small>04 / PROJECTS</small>
+
+        <h2>Things I build & explore.</h2>
+
+        <p>
+            Real experience stays real. Future ideas are clearly
+            marked as future projects.
+        </p>
+
+    </div>
+
+
+    <div class="grid">
+
+
+        <div class="card project">
+
+            <div class="project-label">
+                COMPLETED / ONGOING
+            </div>
+
+            <h3>Primary PC Build</h3>
+
+            <p>
+                A gaming and editing PC assembled and upgraded
+                from available parts, with extensive troubleshooting
+                along the way.
+            </p>
+
+        </div>
+
+
+        <div class="card project">
+
+            <div class="project-label">
+                ELECTRONICS
+            </div>
+
+            <h3>School Electronics Project</h3>
+
+            <p>
+                A school-level electronics project that gave me
+                hands-on experience with components and practical
+                problem solving.
+            </p>
+
+        </div>
+
+
+        <div class="card project">
+
+            <div class="project-label">
+                EXPERIENCE
+            </div>
+
+            <h3>PC Troubleshooting</h3>
+
+            <p>
+                Windows crashes, loading problems, BIOS-related
+                issues, DLL errors and game-file troubleshooting.
+            </p>
+
+        </div>
+
+
+        <div class="card project">
+
+            <div class="project-label">
+                FUTURE PROJECT
+            </div>
+
+            <h3>Smart Pest Detection Concept</h3>
+
+            <p>
+                A future IoT concept exploring automated pest
+                detection and safe pest-control technology.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- JOURNEY -->
+
+<section>
+
+    <div class="title">
+
+        <small>05 / MY JOURNEY</small>
+
+        <h2>Still learning. Still building.</h2>
+
+    </div>
+
+
+    <div class="card timeline">
+
+
+        <div class="timeline-item">
+
+            <small>START</small>
+
+            <h3>Discovered PC Building</h3>
+
+            <p>
+                I found myself drawn into computers and started
+                learning by working with whatever hardware was
+                available.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <small>BUILD</small>
+
+            <h3>Built My Primary PC</h3>
+
+            <p>
+                A project that turned scraps and persistence into
+                a real gaming and editing machine.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <small>NOW</small>
+
+            <h3>Plus Two Electronics</h3>
+
+            <p>
+                Learning electronics while developing practical
+                hardware and troubleshooting skills.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <small>NEXT</small>
+
+            <h3>Computer Engineering</h3>
+
+            <p>
+                Deepening my knowledge of computers, programming,
+                electronics and future IoT projects.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- GAMING -->
+
+<section>
+
+    <div class="title">
+
+        <small>06 / GAMING</small>
+
+        <h2>Gaming is part of the journey.</h2>
+
+        <p>
+            I enjoy gaming while also using games as a way to
+            understand hardware performance and optimization.
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="skills">
+
+            <span class="skill">Spider-Man Miles Morales</span>
+
+            <span class="skill">Red Dead Redemption 2</span>
+
+            <span class="skill">GTA V</span>
+
+            <span class="skill">God of War</span>
+
+            <span class="skill">Ghost of Tsushima</span>
+
+            <span class="skill">Forza Horizon 5</span>
+
+            <span class="skill">Far Cry 3</span>
+
+            <span class="skill">Far Cry 4</span>
+
+            <span class="skill">Far Cry Primal</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact">
+
+    <div class="title">
+
+        <small>07 / CONTACT</small>
+
+        <h2>Let's connect.</h2>
+
+        <p>
+            Have a project, PC idea or tech question?
+            Find me online.
+        </p>
+
+    </div>
+
+
+    <div class="grid">
+
+        <div class="card">
+
+            <h3>Instagram</h3>
+
+            <p>
+                Add your Instagram username here.
+            </p>
+
+            <br>
+
+            <a class="btn" href="#">
+                @YOUR_USERNAME
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Email</h3>
+
+            <p>
+                Add a public contact email later if you
+                want one.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    © 2026 LOLAN · PC Builder & Tech Enthusiast
+
+</footer>
+
+
+</body>
+</html>
