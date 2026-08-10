@@ -31,8 +31,8 @@ nav{
     justify-content:space-between;
     align-items:center;
     background:rgba(7,9,13,.92);
-    border-bottom:1px solid #202631;
     backdrop-filter:blur(12px);
+    border-bottom:1px solid #202631;
 }
 
 .logo{
@@ -49,6 +49,7 @@ nav a{
     color:#aaa;
     text-decoration:none;
     margin-left:18px;
+    transition:.3s;
 }
 
 nav a:hover{
@@ -275,63 +276,67 @@ h1{
 }
 
 
-/* GAMING */
+/* =========================
+   GAMING CARDS
+========================= */
 
 .game-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:20px;
+    gap:22px;
 }
 
 .game-card{
-    min-height:230px;
-    padding:25px;
-    border-radius:20px;
-    border:1px solid #29313d;
-    background:linear-gradient(145deg,#141922,#090c11);
-    color:white;
-    text-decoration:none;
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-end;
+    min-height:300px;
     position:relative;
     overflow:hidden;
+    border-radius:20px;
+    border:1px solid #29313d;
+    background:#0d1118;
+    color:white;
+    text-decoration:none;
     transition:.35s;
+    display:flex;
+    align-items:flex-end;
 }
 
 .game-card:hover{
-    transform:translateY(-8px);
+    transform:translateY(-8px) scale(1.01);
     border-color:#55d9ff;
-    box-shadow:0 15px 40px rgba(0,0,0,.5);
+    box-shadow:0 20px 50px rgba(0,0,0,.55);
 }
 
-.game-card::before{
-    content:"";
+.game-image{
     position:absolute;
     inset:0;
-    background:radial-gradient(
-        circle at 80% 20%,
-        rgba(85,217,255,.20),
-        transparent 45%
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    opacity:.42;
+    transition:.4s;
+}
+
+.game-card:hover .game-image{
+    opacity:.55;
+    transform:scale(1.06);
+}
+
+.game-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to top,
+        #05070bdc 0%,
+        #05070b99 45%,
+        transparent 100%
     );
 }
 
 .game-content{
     position:relative;
     z-index:2;
-}
-
-.game-icon{
-    width:58px;
-    height:58px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:15px;
-    background:#090c11;
-    border:1px solid #303b49;
-    font-size:30px;
-    margin-bottom:20px;
+    width:100%;
+    padding:25px;
 }
 
 .game-label{
@@ -341,20 +346,20 @@ h1{
     font-weight:bold;
 }
 
-.game-card h3{
-    font-size:22px;
-    margin:6px 0;
+.game-content h3{
+    font-size:24px;
+    margin:5px 0;
 }
 
-.game-card p{
-    color:#8993a2;
-    font-size:14px;
+.game-content p{
+    color:#aab2be;
+    font-size:13px;
 }
 
 .steam-button{
     display:inline-block;
-    margin-top:15px;
-    padding:9px 14px;
+    margin-top:14px;
+    padding:9px 15px;
     border-radius:9px;
     background:white;
     color:#07090d;
@@ -363,10 +368,33 @@ h1{
 }
 
 
-/* CONTACT */
+/* =========================
+   PHOTO PLACEHOLDER
+========================= */
+
+.no-photo{
+    position:absolute;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    font-size:50px;
+    background:
+    radial-gradient(circle at 50% 30%,#17364b,#0a0d13 65%);
+}
+
+
+/* =========================
+   CONTACT
+========================= */
 
 .contact{
     text-align:center;
+}
+
+.contact a{
+    color:#55d9ff;
 }
 
 footer{
@@ -377,9 +405,11 @@ footer{
 }
 
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
-@media(max-width:850px){
+@media(max-width:900px){
 
     .game-grid{
         grid-template-columns:repeat(2,1fr);
@@ -417,7 +447,13 @@ footer{
 </style>
 </head>
 
+
 <body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
 
 <nav>
 
@@ -437,7 +473,9 @@ footer{
 </nav>
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero" id="home">
 
@@ -474,7 +512,9 @@ footer{
 </section>
 
 
-<!-- ABOUT -->
+<!-- =========================
+     ABOUT
+========================= -->
 
 <section id="about">
 
@@ -550,7 +590,9 @@ footer{
 </section>
 
 
-<!-- PC BUILD -->
+<!-- =========================
+     PC BUILD
+========================= -->
 
 <section id="build">
 
@@ -611,7 +653,9 @@ footer{
 </section>
 
 
-<!-- SKILLS -->
+<!-- =========================
+     SKILLS
+========================= -->
 
 <section id="skills">
 
@@ -648,7 +692,9 @@ footer{
 </section>
 
 
-<!-- PROJECTS -->
+<!-- =========================
+     PROJECTS
+========================= -->
 
 <section id="projects">
 
@@ -667,6 +713,7 @@ footer{
 
 
     <div class="grid">
+
 
         <div class="card project">
 
@@ -738,7 +785,9 @@ footer{
 </section>
 
 
-<!-- JOURNEY -->
+<!-- =========================
+     JOURNEY
+========================= -->
 
 <section>
 
@@ -814,7 +863,9 @@ footer{
 </section>
 
 
-<!-- GAMING -->
+<!-- =========================
+     GAMING
+========================= -->
 
 <section id="gaming">
 
@@ -822,50 +873,18 @@ footer{
 
         <small>06 / GAMING</small>
 
-        <h2>Games I Play.</h2>
+        <h2>My Gaming Library.</h2>
 
         <p>
-            Click any game to open its Steam page.
+            Click any game card to open its Steam page.
+            RDR2 and Ghost of Tsushima are ready for your
+            personal screenshots.
         </p>
 
     </div>
 
 
     <div class="game-grid">
-
-
-        <!-- SPIDER-MAN -->
-
-        <a
-            class="game-card"
-            href="https://store.steampowered.com/search/?term=Spider-Man%20Miles%20Morales"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-
-            <div class="game-content">
-
-                <div class="game-icon">🕷️</div>
-
-                <div class="game-label">
-                    MARVEL
-                </div>
-
-                <h3>
-                    Spider-Man Miles Morales
-                </h3>
-
-                <p>
-                    Click to explore on Steam.
-                </p>
-
-                <span class="steam-button">
-                    STEAM →
-                </span>
-
-            </div>
-
-        </a>
 
 
         <!-- RDR2 -->
@@ -877,9 +896,13 @@ footer{
             rel="noopener noreferrer"
         >
 
-            <div class="game-content">
+            <div class="no-photo">
+                🤠
+            </div>
 
-                <div class="game-icon">🤠</div>
+            <div class="game-overlay"></div>
+
+            <div class="game-content">
 
                 <div class="game-label">
                     ROCKSTAR GAMES
@@ -890,75 +913,7 @@ footer{
                 </h3>
 
                 <p>
-                    Click to explore on Steam.
-                </p>
-
-                <span class="steam-button">
-                    STEAM →
-                </span>
-
-            </div>
-
-        </a>
-
-
-        <!-- GTA V -->
-
-        <a
-            class="game-card"
-            href="https://store.steampowered.com/search/?term=Grand%20Theft%20Auto%20V"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-
-            <div class="game-content">
-
-                <div class="game-icon">🚗</div>
-
-                <div class="game-label">
-                    ROCKSTAR GAMES
-                </div>
-
-                <h3>
-                    GTA V
-                </h3>
-
-                <p>
-                    Click to explore on Steam.
-                </p>
-
-                <span class="steam-button">
-                    STEAM →
-                </span>
-
-            </div>
-
-        </a>
-
-
-        <!-- GOD OF WAR -->
-
-        <a
-            class="game-card"
-            href="https://store.steampowered.com/search/?term=God%20of%20War"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-
-            <div class="game-content">
-
-                <div class="game-icon">⚔️</div>
-
-                <div class="game-label">
-                    SONY
-                </div>
-
-                <h3>
-                    God of War
-                </h3>
-
-                <p>
-                    Click to explore on Steam.
+                    Click the card to open Steam.
                 </p>
 
                 <span class="steam-button">
@@ -979,12 +934,16 @@ footer{
             rel="noopener noreferrer"
         >
 
+            <div class="no-photo">
+                🗡️
+            </div>
+
+            <div class="game-overlay"></div>
+
             <div class="game-content">
 
-                <div class="game-icon">🗡️</div>
-
                 <div class="game-label">
-                    SONY
+                    PLAYSTATION PC
                 </div>
 
                 <h3>
@@ -992,7 +951,121 @@ footer{
                 </h3>
 
                 <p>
-                    Click to explore on Steam.
+                    Click the card to open Steam.
+                </p>
+
+                <span class="steam-button">
+                    STEAM →
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- GTA V -->
+
+        <a
+            class="game-card"
+            href="https://store.steampowered.com/app/3240220/Grand_Theft_Auto_V_Enhanced/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <div class="no-photo">
+                🚗
+            </div>
+
+            <div class="game-overlay"></div>
+
+            <div class="game-content">
+
+                <div class="game-label">
+                    ROCKSTAR GAMES
+                </div>
+
+                <h3>
+                    Grand Theft Auto V
+                </h3>
+
+                <p>
+                    Click the card to open Steam.
+                </p>
+
+                <span class="steam-button">
+                    STEAM →
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- SPIDER-MAN -->
+
+        <a
+            class="game-card"
+            href="https://store.steampowered.com/app/1817190/Marvels_SpiderMan_Miles_Morales/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <div class="no-photo">
+                🕷️
+            </div>
+
+            <div class="game-overlay"></div>
+
+            <div class="game-content">
+
+                <div class="game-label">
+                    MARVEL
+                </div>
+
+                <h3>
+                    Spider-Man Miles Morales
+                </h3>
+
+                <p>
+                    Click the card to open Steam.
+                </p>
+
+                <span class="steam-button">
+                    STEAM →
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- GOD OF WAR -->
+
+        <a
+            class="game-card"
+            href="https://store.steampowered.com/app/1593500/God_of_War/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <div class="no-photo">
+                ⚔️
+            </div>
+
+            <div class="game-overlay"></div>
+
+            <div class="game-content">
+
+                <div class="game-label">
+                    PLAYSTATION PC
+                </div>
+
+                <h3>
+                    God of War
+                </h3>
+
+                <p>
+                    Click the card to open Steam.
                 </p>
 
                 <span class="steam-button">
@@ -1013,9 +1086,13 @@ footer{
             rel="noopener noreferrer"
         >
 
-            <div class="game-content">
+            <div class="no-photo">
+                🏎️
+            </div>
 
-                <div class="game-icon">🏎️</div>
+            <div class="game-overlay"></div>
+
+            <div class="game-content">
 
                 <div class="game-label">
                     XBOX GAME STUDIOS
@@ -1026,7 +1103,7 @@ footer{
                 </h3>
 
                 <p>
-                    Click to explore on Steam.
+                    Click the card to open Steam.
                 </p>
 
                 <span class="steam-button">
@@ -1047,9 +1124,13 @@ footer{
             rel="noopener noreferrer"
         >
 
-            <div class="game-content">
+            <div class="no-photo">
+                🎯
+            </div>
 
-                <div class="game-icon">🎯</div>
+            <div class="game-overlay"></div>
+
+            <div class="game-content">
 
                 <div class="game-label">
                     UBISOFT
@@ -1060,7 +1141,7 @@ footer{
                 </h3>
 
                 <p>
-                    Click to explore on Steam.
+                    Click the card to open Steam.
                 </p>
 
                 <span class="steam-button">
@@ -1081,9 +1162,13 @@ footer{
             rel="noopener noreferrer"
         >
 
-            <div class="game-content">
+            <div class="no-photo">
+                🏔️
+            </div>
 
-                <div class="game-icon">🎯</div>
+            <div class="game-overlay"></div>
+
+            <div class="game-content">
 
                 <div class="game-label">
                     UBISOFT
@@ -1094,7 +1179,7 @@ footer{
                 </h3>
 
                 <p>
-                    Click to explore on Steam.
+                    Click the card to open Steam.
                 </p>
 
                 <span class="steam-button">
@@ -1115,9 +1200,13 @@ footer{
             rel="noopener noreferrer"
         >
 
-            <div class="game-content">
+            <div class="no-photo">
+                🦴
+            </div>
 
-                <div class="game-icon">🦴</div>
+            <div class="game-overlay"></div>
+
+            <div class="game-content">
 
                 <div class="game-label">
                     UBISOFT
@@ -1128,7 +1217,7 @@ footer{
                 </h3>
 
                 <p>
-                    Click to explore on Steam.
+                    Click the card to open Steam.
                 </p>
 
                 <span class="steam-button">
@@ -1145,7 +1234,9 @@ footer{
 </section>
 
 
-<!-- CONTACT -->
+<!-- =========================
+     CONTACT
+========================= -->
 
 <section id="contact" class="contact">
 
@@ -1193,20 +1284,14 @@ footer{
 
             <p>
                 Email:
-                <a
-                    href="mailto:abhinandrambinu@gmail.com"
-                    style="color:#55d9ff;"
-                >
+                <a href="mailto:abhinandrambinu@gmail.com">
                     abhinandrambinu@gmail.com
                 </a>
             </p>
 
             <p>
                 Phone:
-                <a
-                    href="tel:+918943942354"
-                    style="color:#55d9ff;"
-                >
+                <a href="tel:+918943942354">
                     +91 8943942354
                 </a>
             </p>
@@ -1223,6 +1308,7 @@ footer{
     © 2026 LOLAN • PC Builder & Tech Enthusiast
 
 </footer>
+
 
 </body>
 </html>
