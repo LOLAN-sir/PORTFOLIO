@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>LOLAN PC | Gaming Build</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -19,6 +21,8 @@ body{
     color:#f5f7fa;
     line-height:1.6;
 }
+
+/* NAVIGATION */
 
 nav{
     position:fixed;
@@ -48,15 +52,20 @@ nav a{
     color:#aaa;
     text-decoration:none;
     margin-left:25px;
+    transition:.3s;
 }
 
 nav a:hover{
     color:#55d9ff;
 }
 
+/* SECTIONS */
+
 section{
     padding:110px 8%;
 }
+
+/* HERO */
 
 .hero{
     min-height:100vh;
@@ -64,6 +73,7 @@ section{
     align-items:center;
     justify-content:center;
     text-align:center;
+
     background:
     radial-gradient(circle at 80% 20%,#12324755,transparent 35%),
     radial-gradient(circle at 20% 80%,#24205a44,transparent 35%);
@@ -103,6 +113,8 @@ h1{
     font-size:18px;
 }
 
+/* BUTTONS */
+
 .buttons{
     margin-top:30px;
 }
@@ -129,6 +141,8 @@ h1{
     border-color:#55d9ff;
 }
 
+/* TITLES */
+
 .title{
     margin-bottom:45px;
 }
@@ -149,16 +163,7 @@ h1{
     max-width:700px;
 }
 
-.pc-image{
-    width:100%;
-    max-width:900px;
-    margin:0 auto 35px;
-    display:block;
-    border-radius:22px;
-    border:1px solid #29313d;
-    background:#0b0e13;
-    box-shadow:0 20px 60px rgba(0,0,0,.45);
-}
+/* CARDS */
 
 .card{
     background:linear-gradient(145deg,#11151c,#0b0e13);
@@ -166,17 +171,56 @@ h1{
     border-radius:20px;
     padding:30px;
     transition:.3s;
+
+    /* IMPORTANT IMAGE FIX */
+    overflow:hidden;
 }
 
 .card:hover{
     border-color:#55d9ff66;
 }
 
+/* PC IMAGE */
+
+.pc-image{
+    display:block;
+
+    width:100%;
+    max-width:900px;
+
+    height:auto;
+    max-height:600px;
+
+    object-fit:contain;
+
+    margin:0 auto 40px;
+
+    border-radius:22px;
+    border:1px solid #29313d;
+
+    background:#0b0e13;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.45);
+
+    position:relative;
+    z-index:1;
+}
+
+/* Prevent any image from overflowing */
+
+img{
+    max-width:100%;
+}
+
+/* GRIDS */
+
 .grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
     gap:22px;
 }
+
+/* SPECS */
 
 .specs{
     display:grid;
@@ -186,22 +230,48 @@ h1{
 
 .spec{
     padding:20px;
+
     background:#090c11;
+
     border:1px solid #222936;
+
     border-radius:14px;
 }
 
 .spec strong{
     display:block;
+
     color:#55d9ff;
+
     font-size:13px;
+
     letter-spacing:1px;
+
     margin-bottom:5px;
 }
 
 .spec span{
     font-size:18px;
 }
+
+/* PERFORMANCE */
+
+.fps{
+    text-align:center;
+    padding:40px;
+}
+
+.fps-number{
+    font-size:70px;
+    font-weight:900;
+    color:#55d9ff;
+}
+
+.fps p{
+    color:#8993a2;
+}
+
+/* GAMES */
 
 .games{
     display:grid;
@@ -211,13 +281,20 @@ h1{
 
 .game{
     padding:25px;
+
     min-height:130px;
+
     display:flex;
     flex-direction:column;
     justify-content:flex-end;
+
     border-radius:18px;
-    background:linear-gradient(145deg,#11151c,#090c11);
+
+    background:
+    linear-gradient(145deg,#11151c,#090c11);
+
     border:1px solid #242b36;
+
     transition:.3s;
 }
 
@@ -235,31 +312,25 @@ h1{
     margin-top:6px;
 }
 
-.fps{
-    text-align:center;
-    padding:40px;
-}
-
-.fps-number{
-    font-size:70px;
-    font-weight:900;
-    color:#55d9ff;
-}
-
-.fps p{
-    color:#8993a2;
-}
+/* UPGRADE */
 
 .upgrade{
     border-left:3px solid #55d9ff;
 }
 
+/* FOOTER */
+
 footer{
     text-align:center;
+
     padding:35px;
+
     color:#68717e;
+
     border-top:1px solid #202631;
 }
+
+/* MOBILE */
 
 @media(max-width:750px){
 
@@ -291,22 +362,42 @@ footer{
     .fps-number{
         font-size:55px;
     }
+
+    .pc-image{
+        max-height:450px;
+        margin-bottom:30px;
+    }
 }
+
 </style>
 </head>
 
+
 <body>
 
+
+<!-- NAVIGATION -->
+
 <nav>
-    <div class="logo">LO<span>LAN</span></div>
+
+    <div class="logo">
+        LO<span>LAN</span>
+    </div>
 
     <div class="links">
+
         <a href="#home">Home</a>
+
         <a href="#specs">Specs</a>
+
         <a href="#performance">Performance</a>
+
         <a href="#games">Games</a>
+
         <a href="#upgrade">Upgrade</a>
+
     </div>
+
 </nav>
 
 
@@ -320,17 +411,22 @@ footer{
             LOLAN PC • GAMING • EDITING
         </div>
 
-        <h1>LOLAN PC</h1>
+        <h1>
+            LOLAN PC
+        </h1>
 
-        <h2>Built from scraps. Built to game.</h2>
+        <h2>
+            Built from scraps. Built to game.
+        </h2>
 
         <p>
-            My primary gaming and editing PC — upgraded over time
-            with the goal of getting the most performance possible
-            from the hardware I have.
+            My primary gaming and editing PC — upgraded over
+            time with the goal of getting the most performance
+            possible from the hardware I have.
         </p>
 
         <div class="buttons">
+
             <a class="btn primary" href="#specs">
                 Explore Specifications
             </a>
@@ -338,6 +434,7 @@ footer{
             <a class="btn" href="#games">
                 View Games
             </a>
+
         </div>
 
     </div>
@@ -350,13 +447,22 @@ footer{
 <section>
 
     <div class="title">
-        <small>01 / THE BUILD</small>
-        <h2>Meet LOLAN PC.</h2>
+
+        <small>
+            01 / THE BUILD
+        </small>
+
+        <h2>
+            Meet LOLAN PC.
+        </h2>
+
         <p>
-            The machine I use for gaming, editing and experimenting
-            with PC hardware.
+            The machine I use for gaming, editing and
+            experimenting with PC hardware.
         </p>
+
     </div>
+
 
     <div class="card">
 
@@ -367,7 +473,9 @@ footer{
         >
 
         <p style="text-align:center;color:#8993a2;">
+
             LOLAN PC — my primary gaming and editing setup.
+
         </p>
 
     </div>
@@ -375,15 +483,19 @@ footer{
 </section>
 
 
-<!-- SPECS -->
+<!-- SPECIFICATIONS -->
 
 <section id="specs">
 
     <div class="title">
 
-        <small>02 / SPECIFICATIONS</small>
+        <small>
+            02 / SPECIFICATIONS
+        </small>
 
-        <h2>Inside the machine.</h2>
+        <h2>
+            Inside the machine.
+        </h2>
 
         <p>
             Current hardware configuration of LOLAN PC.
@@ -391,66 +503,162 @@ footer{
 
     </div>
 
+
     <div class="specs">
 
         <div class="spec">
-            <strong>CPU</strong>
-            <span>Intel Core i3-4160</span>
+
+            <strong>
+                CPU
+            </strong>
+
+            <span>
+                Intel Core i3-4160
+            </span>
+
         </div>
 
-        <div class="spec">
-            <strong>GPU</strong>
-            <span>NVIDIA GTX 1660 6GB</span>
-        </div>
 
         <div class="spec">
-            <strong>MOTHERBOARD</strong>
-            <span>PowerX H81</span>
+
+            <strong>
+                GPU
+            </strong>
+
+            <span>
+                NVIDIA GTX 1660 6GB
+            </span>
+
         </div>
 
-        <div class="spec">
-            <strong>RAM</strong>
-            <span>16GB DDR3 1600MHz</span>
-        </div>
 
         <div class="spec">
-            <strong>STORAGE</strong>
-            <span>1TB HDD + 128GB SSD</span>
+
+            <strong>
+                MOTHERBOARD
+            </strong>
+
+            <span>
+                PowerX H81
+            </span>
+
         </div>
 
-        <div class="spec">
-            <strong>POWER SUPPLY</strong>
-            <span>Corsair CV550 80+ Bronze</span>
-        </div>
 
         <div class="spec">
-            <strong>CPU COOLER</strong>
-            <span>Standard CPU Cooler</span>
+
+            <strong>
+                RAM
+            </strong>
+
+            <span>
+                16GB DDR3 1600MHz
+            </span>
+
         </div>
 
-        <div class="spec">
-            <strong>CASE</strong>
-            <span>No Case — Open Build</span>
-        </div>
 
         <div class="spec">
-            <strong>MONITOR</strong>
-            <span>HP 197V</span>
+
+            <strong>
+                STORAGE
+            </strong>
+
+            <span>
+                1TB HDD + 128GB SSD
+            </span>
+
         </div>
 
-        <div class="spec">
-            <strong>KEYBOARD</strong>
-            <span>HP Gaming Keyboard</span>
-        </div>
 
         <div class="spec">
-            <strong>MOUSE</strong>
-            <span>Zebronics Gaming Mouse</span>
+
+            <strong>
+                POWER SUPPLY
+            </strong>
+
+            <span>
+                Corsair CV550 80+ Bronze
+            </span>
+
         </div>
 
+
         <div class="spec">
-            <strong>OPERATING SYSTEM</strong>
-            <span>Windows 10 22H2</span>
+
+            <strong>
+                CPU COOLER
+            </strong>
+
+            <span>
+                Standard CPU Cooler
+            </span>
+
+        </div>
+
+
+        <div class="spec">
+
+            <strong>
+                CASE
+            </strong>
+
+            <span>
+                No Case — Open Build
+            </span>
+
+        </div>
+
+
+        <div class="spec">
+
+            <strong>
+                MONITOR
+            </strong>
+
+            <span>
+                HP 197V
+            </span>
+
+        </div>
+
+
+        <div class="spec">
+
+            <strong>
+                KEYBOARD
+            </strong>
+
+            <span>
+                HP Gaming Keyboard
+            </span>
+
+        </div>
+
+
+        <div class="spec">
+
+            <strong>
+                MOUSE
+            </strong>
+
+            <span>
+                Zebronics Gaming Mouse
+            </span>
+
+        </div>
+
+
+        <div class="spec">
+
+            <strong>
+                OPERATING SYSTEM
+            </strong>
+
+            <span>
+                Windows 10 22H2
+            </span>
+
         </div>
 
     </div>
@@ -464,9 +672,13 @@ footer{
 
     <div class="title">
 
-        <small>03 / PERFORMANCE</small>
+        <small>
+            03 / PERFORMANCE
+        </small>
 
-        <h2>How does it perform?</h2>
+        <h2>
+            How does it perform?
+        </h2>
 
         <p>
             Gaming performance varies depending on the game,
@@ -475,13 +687,16 @@ footer{
 
     </div>
 
+
     <div class="card fps">
 
         <div class="fps-number">
             38–48 FPS
         </div>
 
-        <h3>Typical Gaming Performance</h3>
+        <h3>
+            Typical Gaming Performance
+        </h3>
 
         <p>
             Approximate average range across the games I play.
@@ -490,7 +705,10 @@ footer{
         <br>
 
         <p>
-            Resolution: <strong>1080p</strong>
+            Resolution:
+            <strong>
+                1080p
+            </strong>
         </p>
 
     </div>
@@ -504,51 +722,113 @@ footer{
 
     <div class="title">
 
-        <small>04 / GAMING LIBRARY</small>
+        <small>
+            04 / GAMING LIBRARY
+        </small>
 
-        <h2>Games I play.</h2>
+        <h2>
+            Games I play.
+        </h2>
 
         <p>
-            These are some of the games tested or played on LOLAN PC.
+            These are some of the games tested or played
+            on LOLAN PC.
         </p>
 
     </div>
 
+
     <div class="games">
 
-        <div class="game">
-            <small>OPEN WORLD</small>
-            <h3>Grand Theft Auto V</h3>
-        </div>
 
         <div class="game">
-            <small>WESTERN</small>
-            <h3>Red Dead Redemption 2</h3>
+
+            <small>
+                OPEN WORLD
+            </small>
+
+            <h3>
+                Grand Theft Auto V
+            </h3>
+
         </div>
 
-        <div class="game">
-            <small>ACTION</small>
-            <h3>Ghost of Tsushima</h3>
-        </div>
 
         <div class="game">
-            <small>ACTION</small>
-            <h3>Far Cry 3</h3>
+
+            <small>
+                WESTERN
+            </small>
+
+            <h3>
+                Red Dead Redemption 2
+            </h3>
+
         </div>
 
-        <div class="game">
-            <small>ACTION</small>
-            <h3>Far Cry 4</h3>
-        </div>
 
         <div class="game">
-            <small>SURVIVAL</small>
-            <h3>Far Cry Primal</h3>
+
+            <small>
+                ACTION
+            </small>
+
+            <h3>
+                Ghost of Tsushima
+            </h3>
+
         </div>
 
+
         <div class="game">
-            <small>RPG</small>
-            <h3>Cyberpunk 2077</h3>
+
+            <small>
+                ACTION
+            </small>
+
+            <h3>
+                Far Cry 3
+            </h3>
+
+        </div>
+
+
+        <div class="game">
+
+            <small>
+                ACTION
+            </small>
+
+            <h3>
+                Far Cry 4
+            </h3>
+
+        </div>
+
+
+        <div class="game">
+
+            <small>
+                SURVIVAL
+            </small>
+
+            <h3>
+                Far Cry Primal
+            </h3>
+
+        </div>
+
+
+        <div class="game">
+
+            <small>
+                RPG
+            </small>
+
+            <h3>
+                Cyberpunk 2077
+            </h3>
+
         </div>
 
     </div>
@@ -556,33 +836,40 @@ footer{
 </section>
 
 
-<!-- UPGRADE -->
+<!-- FUTURE UPGRADE -->
 
 <section id="upgrade">
 
     <div class="title">
 
-        <small>05 / FUTURE UPGRADE</small>
+        <small>
+            05 / FUTURE UPGRADE
+        </small>
 
-        <h2>What's next?</h2>
+        <h2>
+            What's next?
+        </h2>
 
     </div>
 
+
     <div class="card upgrade">
 
-        <h3>CPU + CPU Cooler Upgrade</h3>
+        <h3>
+            CPU + CPU Cooler Upgrade
+        </h3>
 
         <p>
-            After this year, the next major upgrade planned for
-            LOLAN PC is replacing the current CPU and upgrading
-            the CPU cooler.
+            After this year, the next major upgrade planned
+            for LOLAN PC is replacing the current CPU and
+            upgrading the CPU cooler.
         </p>
 
         <br>
 
         <p>
-            The goal is to improve overall system performance and
-            remove the CPU bottleneck in demanding games.
+            The goal is to improve overall system performance
+            and reduce the CPU bottleneck in demanding games.
         </p>
 
     </div>
@@ -590,41 +877,53 @@ footer{
 </section>
 
 
-<!-- BUILD STORY -->
+<!-- STORY -->
 
 <section>
 
     <div class="title">
 
-        <small>06 / THE STORY</small>
+        <small>
+            06 / THE STORY
+        </small>
 
-        <h2>Why this PC matters.</h2>
+        <h2>
+            Why this PC matters.
+        </h2>
 
     </div>
 
+
     <div class="grid">
+
 
         <div class="card">
 
-            <h3>Built with what I had</h3>
+            <h3>
+                Built with what I had
+            </h3>
 
             <p>
-                LOLAN PC wasn't built by simply buying the most
-                expensive parts. It grew through upgrades,
+                LOLAN PC wasn't built by simply buying the
+                most expensive parts. It grew through upgrades,
                 troubleshooting and making the most out of
                 available hardware.
             </p>
 
         </div>
 
+
         <div class="card">
 
-            <h3>More than gaming</h3>
+            <h3>
+                More than gaming
+            </h3>
 
             <p>
-                This PC is also my learning platform. It has helped
-                me understand hardware, Windows troubleshooting,
-                performance problems and PC building.
+                This PC is also my learning platform. It has
+                helped me understand hardware, Windows
+                troubleshooting, performance problems and
+                PC building.
             </p>
 
         </div>
@@ -650,6 +949,7 @@ footer{
     © 2026 LOLAN — PC Builder & Tech Enthusiast
 
 </footer>
+
 
 </body>
 </html>
